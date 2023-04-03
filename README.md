@@ -100,7 +100,7 @@ Green box
 Blue box
 :::
 :::caution
-Orange bpx
+Orange box
 :::
 :::danger
 Red box
