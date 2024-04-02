@@ -18,12 +18,12 @@ Upcoming sessions: 16 Apr, 28 Mai, 25 June, (summer break afterwards).
 
 ## Nano Session #11
 
-_26 March 2024, 17:00 CET (👉 Yes, one hour later than usual 👈)_
+_26 March 2024, 17:00 CET_
 
 Speakers:
 
-- [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on "Open-Sourcing Scientific Research with Discourse Graphs and Nanopublications: A Case Study from our Lab Graph" (demo and presentation)
-- [Vincent Emonet](https://vemonet.github.io/) and [Tobias Kuhn](https://tkuhn.org) on "When Nanodash is not Enough (Reloaded) – Rise of the APIs" (discussion and demo)
+- [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on "Open-Sourcing Scientific Research with Discourse Graphs and Nanopublications: A Case Study from our Lab Graph" (presentation)
+- [Vincent Emonet](https://vemonet.github.io/) and [Tobias Kuhn](https://tkuhn.org) on "When Nanodash is not Enough (Reloaded) – Rise of the APIs" (demo)
 
 ## Nano Session #10
 
