@@ -14,7 +14,7 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 26 Mar, 16 Apr, 28 Mai, 25 June, (summer break afterwards).
+Upcoming sessions: 16 Apr, 28 Mai, 25 June, (summer break afterwards).
 
 ## Nano Session #11
 
