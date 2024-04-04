@@ -16,6 +16,20 @@ Important Links:
 
 Upcoming sessions: 16 Apr, 28 Mai, 25 June, (summer break afterwards).
 
+## Nano Session #12 (Newcomer Special)
+
+_16 April 2024, 16:00 CEST for 90 minutes_
+
+Speakers:
+
+- [Barend Mons](https://council.science/profile/barend-mons/) on “The Roots” (speech)
+- [Philipp von Essen](https://knowledgepixels.com/bios) on “Conceptual and Technical Overview” (presentation)
+- Tba on “Nanopubs in Practice” (demo)
+- Q&A
+
+This special session requires registration. Just send an email to [Philipp](mailto:philipp@knowledgepixles.com) before 12 April if you'd like to participate.
+
+
 ## Nano Session #11
 
 _26 March 2024, 17:00 CET_
@@ -41,9 +55,6 @@ _16 January 2024, 16:00 CET for 2 hours_
 Speaker:
 
 - [Tobias Kuhn](https://tkuhn.org) on "Under the Hood of Nanopublications and their Ecosystem: A Technical Hands-on Introduction to Nanopublications and the Related Services" (technical tutorial)
-
-This special session requires registration. Just send an email to [Tobias](mailto:tobias@knowledgepixels.com) before 15 January if you'd like to participate.
-
 
 ## Nano Session #8
 
