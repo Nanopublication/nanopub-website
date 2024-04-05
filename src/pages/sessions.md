@@ -3,7 +3,7 @@
 The Nano Sessions connect the people who are interested in nanopublications and who want to learn from each other about the related technologies. Every session consists of two 10-minute talks, discussion, and a news sharing part. See the [description](https://docs.google.com/document/d/1-0aImR4bFHmay8j6bSFgIDi9sw01KXdmYw9szyhAWmY/edit#) for more information.
 
 
-[Knowledge Pixels](https://knowledgepixels.com/) hosts the first meetings, but we are happy to let others join and become hosts too. Do you want to share some insights, a problem you can’t solve, or a use case you are working on? Send an [email](mailto:ph.vonessen@bluewin.ch) to get a slot in an upcoming session.
+[Knowledge Pixels](https://knowledgepixels.com/) hosts the first meetings, but we are happy to let others join and become hosts too. Do you want to share some insights, a problem you can’t solve, or a use case you are working on? Send an [email](mailto:philipp@knowledgepixels.com) to get a slot in an upcoming session.
 
 
 
@@ -27,7 +27,7 @@ Speakers:
 - Tba on “Nanopubs in Practice” (demo)
 - Q&A
 
-This special session requires registration. Just send an email to [Philipp](mailto:philipp@knowledgepixles.com) before 12 April if you'd like to participate.
+This special session requires registration. Just send an email to [Philipp](mailto:philipp@knowledgepixels.com) before 12 April if you'd like to participate.
 
 
 ## Nano Session #11
