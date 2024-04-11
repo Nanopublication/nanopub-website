@@ -37,7 +37,7 @@ _26 March 2024, 17:00 CET_
 Speakers:
 
 - [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on "Open-Sourcing Scientific Research with Discourse Graphs and Nanopublications: A Case Study from our Lab Graph" (presentation)
-- [Vincent Emonet](https://vemonet.github.io/) and [Tobias Kuhn](https://tkuhn.org) on "When Nanodash is not Enough (Reloaded) – Rise of the APIs" (demo)
+- [Vincent Emonet](https://vemonet.github.io/) and [Tobias Kuhn](https://www.tkuhn.org) on "When Nanodash is not Enough (Reloaded) – Rise of the APIs" (demo)
 
 ## Nano Session #10
 
