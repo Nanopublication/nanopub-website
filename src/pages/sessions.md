@@ -54,7 +54,7 @@ _16 January 2024, 16:00 CET for 2 hours_
 
 Speaker:
 
-- [Tobias Kuhn](https://tkuhn.org) on "Under the Hood of Nanopublications and their Ecosystem: A Technical Hands-on Introduction to Nanopublications and the Related Services" (technical tutorial)
+- [Tobias Kuhn](https://www.tkuhn.org) on "Under the Hood of Nanopublications and their Ecosystem: A Technical Hands-on Introduction to Nanopublications and the Related Services" (technical tutorial)
 
 ## Nano Session #8
 
@@ -63,7 +63,7 @@ _12 December 2023, 16:00 CET_
 Speakers:
 
 - [Ronen Tamari](https://ronentk.github.io/) on "Researchers are Nanopublishing but Don’t Know it yet: Detecting Nanopublications in Social Media Using Language Models" (demo and presentation)
-- [Tobias Kuhn](https://tkuhn.org) on "New Features of Nanopublications: Types and Labels" (presentation)
+- [Tobias Kuhn](https://www.tkuhn.org) on "New Features of Nanopublications: Types and Labels" (presentation)
 
 
 ## Nano Session #7
@@ -93,7 +93,7 @@ _13 June 2023, 16:00 CEST_
 
 Speakers:
 - [Erik van Winkle](https://www.linkedin.com/in/erik-van-winkle/) on "Atomic Units of Knowledge in Research Objects: How FDOs Targeting Different Use Cases Can Collaborate" (demo and presentation)
-- [Tobias Kuhn](https://tkuhn.org) on "Scaling Nanopublications: Considerations on the Long and Short Run" (presentation)
+- [Tobias Kuhn](https://www.tkuhn.org) on "Scaling Nanopublications: Considerations on the Long and Short Run" (presentation)
 
 
 
@@ -133,4 +133,4 @@ _28 February 2023, 16:00 CET_
 Speakers:
 
 - [Jorrit Poelen](https://jhpoelen.nl) on "What Bee? On Distributed Publishing of Existing Digitized Specimen Records and Their Derived Knowledge" (demo and presentation)
-- [Tobias Kuhn](https://tkuhn.org) on "Moving from Bench to Dash: Demo of the New Online Mode of the Nanopublishing Tool Nanobench / Nanodash and an Update on Some of the New and Planned Features"
+- [Tobias Kuhn](https://www.tkuhn.org) on "Moving from Bench to Dash: Demo of the New Online Mode of the Nanopublishing Tool Nanobench / Nanodash and an Update on Some of the New and Planned Features"
