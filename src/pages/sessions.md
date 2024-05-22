@@ -16,6 +16,15 @@ Important Links:
 
 Upcoming sessions: 28 Mai, 25 June, (summer break afterwards).
 
+## Nano Session #13
+
+_28 April 2024, 17:00 CEST_
+
+Speakers:
+
+- [Rok Roškar](https://www.datascience.ch/people/rok-roskar) on “Sustainable Data Science with the Renku Platform (and Dissemination with Nanopubs?)” (presentation)
+- [Valentijn van Dijk](https://www.linkedin.com/in/valentijn-van-dijk-461a74143/) on “Towards FAIR Representation of Evidence for Gene-Disease Associations from Natural Experiments – A Case Study” (presentation)
+
 ## Nano Session #12 (Newcomer Special)
 
 _16 April 2024, 16:00 CEST for 90 minutes_
