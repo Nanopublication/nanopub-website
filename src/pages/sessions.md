@@ -18,7 +18,7 @@ Upcoming sessions: 28 Mai, 25 June, (summer break afterwards).
 
 ## Nano Session #13
 
-_28 April 2024, 17:00 CEST_
+_28 April 2024, 16:00 CEST_
 
 Speakers:
 
