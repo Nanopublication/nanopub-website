@@ -14,11 +14,11 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 28 Mai, 25 June, (summer break afterwards).
+Upcoming sessions: 25 June, (summer break afterwards).
 
 ## Nano Session #13
 
-_28 April 2024, 16:00 CEST_
+_28 May 2024, 16:00 CEST_
 
 Speakers:
 
@@ -35,8 +35,6 @@ Speakers:
 - [Philipp von Essen](https://knowledgepixels.com/bios) on “Conceptual and Technical Overview” (presentation)
 - [Tobias Kuhn](https://www.tkuhn.org) on “Nanopubs in Practice” (demo and presentation)
 - Q&A
-
-
 
 ## Nano Session #11
 
