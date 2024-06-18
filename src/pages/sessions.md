@@ -14,7 +14,25 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 25 June, (summer break afterwards).
+Upcoming sessions: 25 June, summer break,.
+
+## Nano Session #14
+
+_25 June 2024, 16:00 CEST_
+
+Season finale! A recap with speakers from sessions 1 to 12. How have their projects evolved? What are they doing next? What do they wish or need for the future of the nanopub ecosystem?
+
+Lightning talks:
+- [Jorrit Poelen](https://jhpoelen.nl) on "GloBI ❤️ Nanopubs – Mobilizing Millions of Nanopubs Beyond the Internet."
+- [Ronen Tamari](https://ronentk.github.io/) on "Sensemaking Networks: FAIRifying Science Social Media with AI and Nanopublications"
+- [Teodor Georgiev](https://pensoft.net/teodor_georgiev) on "What Did my Paper Say? Nanopublications Pilot at RIO Journal"
+- [Stefano Marchesin](http://www.dei.unipd.it/~marches1/) on "From Building Knowledge Bases with Nanopubs to Evaluating them: The Role of Data Quality"
+- [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on  "Semantic Nanopublishing from Discourse Graphs"
+- [Piotr Sowiński](https://github.com/Ostrzyciel) on "Living Literature Reviews with Nanopubs – RDF-STaX Case Study and the Future"
+-  [Vincent Emonet](https://vemonet.github.io/) on "Simplifying Nanopublications on the Web with nanopub-js: Browser-Compatible Libraries and Standard Web Components"
+- [Philipp von Essen](https://knowledgepixels.com/bios) on "What Knowledge Pixels is up to"
+- [Tobias Kuhn](https://www.tkuhn.org) on "Next Steps for the Nanopub Ecosystem"
+
 
 ## Nano Session #13
 
@@ -22,8 +40,8 @@ _28 May 2024, 16:00 CEST_
 
 Speakers:
 
-- [Rok Roškar](https://www.datascience.ch/people/rok-roskar) on “Sustainable Data Science with the Renku Platform (and Dissemination with Nanopubs?)” (presentation)
-- [Valentijn van Dijk](https://www.linkedin.com/in/valentijn-van-dijk-461a74143/) on “Towards FAIR Representation of Evidence for Gene-Disease Associations from Natural Experiments – A Case Study” (presentation)
+- [Rok Roškar](https://www.datascience.ch/people/rok-roskar) on "Sustainable Data Science with the Renku Platform (and Dissemination with Nanopubs?)" (presentation)
+- [Valentijn van Dijk](https://www.linkedin.com/in/valentijn-van-dijk-461a74143/) on "Towards FAIR Representation of Evidence for Gene-Disease Associations from Natural Experiments – A Case Study" (presentation)
 
 ## Nano Session #12 (Newcomer Special)
 
@@ -31,9 +49,9 @@ _16 April 2024, 16:00 CEST for 90 minutes_
 
 Speakers:
 
-- [Barend Mons](https://council.science/profile/barend-mons/) on “The Roots” (speech)
-- [Philipp von Essen](https://knowledgepixels.com/bios) on “Conceptual and Technical Overview” (presentation)
-- [Tobias Kuhn](https://www.tkuhn.org) on “Nanopubs in Practice” (demo and presentation)
+- [Barend Mons](https://council.science/profile/barend-mons/) on "The Roots" (speech)
+- [Philipp von Essen](https://knowledgepixels.com/bios) on "Conceptual and Technical Overview" (presentation)
+- [Tobias Kuhn](https://www.tkuhn.org) on "Nanopubs in Practice" (demo and presentation)
 - Q&A
 
 ## Nano Session #11
