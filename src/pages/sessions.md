@@ -25,7 +25,7 @@ Season finale! A recap with speakers from sessions 1 to 12. How have their proje
 Lightning talks:
 - [Jorrit Poelen](https://jhpoelen.nl) on "GloBI ❤️ Nanopubs – Mobilizing Millions of Nanopubs Beyond the Internet."
 - [Ronen Tamari](https://ronentk.github.io/) on "Sensemaking Networks: FAIRifying Science Social Media with AI and Nanopublications"
-- [Teodor Georgiev](https://pensoft.net/teodor_georgiev) on "What Did my Paper Say? Nanopublications Pilot at RIO Journal"
+- [Iva Boyadzhieva](https://www.linkedin.com/in/iva-boyadzhieva/) on "What Did my Paper Say? Nanopublications for Biodiversity"
 - [Stefano Marchesin](http://www.dei.unipd.it/~marches1/) on "From Building Knowledge Bases with Nanopubs to Evaluating them: The Role of Data Quality"
 - [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on  "Semantic Nanopublishing from Discourse Graphs"
 - [Piotr Sowiński](https://github.com/Ostrzyciel) on "Living Literature Reviews with Nanopubs – RDF-STaX Case Study and the Future"
