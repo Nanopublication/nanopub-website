@@ -28,7 +28,7 @@ module.exports={
         "docs": {
           "showLastUpdateAuthor": true,
           "showLastUpdateTime": true,
-          "editUrl": "https://github.com/Nanopublication/nanopub-website/edit/main/website/",
+          "editUrl": "https://github.com/Nanopublication/nanopub-website/edit/main/",
           "path": "./docs",
           "breadcrumbs": false,
           "sidebarPath": require.resolve('./sidebars.json')
