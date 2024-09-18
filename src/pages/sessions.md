@@ -16,6 +16,15 @@ Important Links:
 
 Upcoming sessions: 24 Sept, 29 Oct, 19 Nov, 17 Dec.
 
+## Nano Session #15
+
+_24 Sept 2024, 16:00 CEST_
+
+Speakers:
+
+- [Piotr Sowiński](https://github.com/Ostrzyciel) on "Reporting Benchmark Results with Nanopublications in RiverBench"
+- [Sergei Tarasov](https://www.tarasovlab.com/team) on "Bridging Semantic Species/Trait Descriptions and Nanopubs"
+
 ## Nano Session #14
 
 _25 June 2024, 16:00 CEST_
