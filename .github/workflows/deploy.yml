@@ -25,7 +25,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-          yarn policies set-version v1.22.17
 
       - name: Build website
         run: |
