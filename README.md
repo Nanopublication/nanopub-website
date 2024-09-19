@@ -63,6 +63,20 @@ To deploy the website locally with `yarn` and see your changes:
     yarn dev
     ```
 
+### ⏫ Upgrade dependencies
+
+To keep everything working it is important to upgrade to the dependencies to their latest version in the `package.json`. The most important dependency for this website is [**`@docusaurus/core`**](https://docusaurus.io/docs/migration), you should always check this one first.
+
+This command should help you upgrade dependencies automatically:
+
+```bash
+yarn upgrade
+```
+
+> [!TIP]
+>
+> If `yarn upgrade` does not work as expected, sometime it is better to just take 5 minutes and manually upgrade the dependencies directly in the `package.json` and run `yarn` to update the `yarn.lock` file
+
 ### 🐳 Deploy with docker
 
 Alternatively you can deploy the website locally with docker and docker-compose (make sure they are installed):
