@@ -38,7 +38,7 @@ Lightning talks:
 - [Stefano Marchesin](http://www.dei.unipd.it/~marches1/) on "From Building Knowledge Bases with Nanopubs to Evaluating them: The Role of Data Quality"
 - [Matthew Akamatsu](https://www.biology.washington.edu/people/profile/matthew-akamatsu) on  "Semantic Nanopublishing from Discourse Graphs"
 - [Piotr Sowiński](https://github.com/Ostrzyciel) on "Living Literature Reviews with Nanopubs – RDF-STaX Case Study and the Future"
--  [Vincent Emonet](https://vemonet.github.io/) on "Simplifying Nanopublications on the Web with nanopub-js: Browser-Compatible Libraries and Standard Web Components"
+- [Vincent Emonet](https://vemonet.github.io/) on "Simplifying Nanopublications on the Web with nanopub-js: Browser-Compatible Libraries and Standard Web Components"
 - [Philipp von Essen](https://knowledgepixels.com/bios) on "What Knowledge Pixels is up to"
 - [Tobias Kuhn](https://www.tkuhn.org) on "Next Steps for the Nanopub Ecosystem"
 
