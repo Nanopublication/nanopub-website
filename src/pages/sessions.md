@@ -16,6 +16,15 @@ Important Links:
 
 Upcoming sessions: 24 Sept, 29 Oct, 19 Nov, 17 Dec.
 
+## Nano Session #16
+
+_29 October 2023, 16:00 CET_
+
+Speakers:
+
+- [Barbara Magagna](https://partnersinfair.com/who/) on "ADOPTing Nanopubs for Observables - FAIR Descriptions for Variables Using I-ADOPT Compliant Templates" (demo and presentation)
+- Second slot: tba
+
 ## Nano Session #15
 
 _24 Sept 2024, 16:00 CEST_
@@ -136,7 +145,7 @@ _16 Mai 2023, 16:00 CEST_
 
 Speakers:
 
-- [Barbara Magagna](https://partnersinfair.com/who-we-are/) on "The Value of Nanopubs for Representing FAIR Enabling Resources" (demo and presentation)
+- [Barbara Magagna](https://partnersinfair.com/who/) on "The Value of Nanopubs for Representing FAIR Enabling Resources" (demo and presentation)
 - [Stefano Marchesin](http://www.dei.unipd.it/~marches1/) on "Annotated Data Doesn't Grow on Trees, but Nanopublications Do: Exploiting Nanopublications to Train Relation Extraction Models for Gene-Disease Associations" (demo and presentation)
 
 
