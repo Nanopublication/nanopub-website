@@ -23,7 +23,7 @@ _29 October 2023, 16:00 CET_
 Speakers:
 
 - [Barbara Magagna](https://partnersinfair.com/who/) on "ADOPTing Nanopubs for Observables - FAIR Descriptions for Variables Using I-ADOPT Compliant Templates" (demo and presentation)
-- Second slot: tba
+- Second slot: open (drop a [note](mailto:philipp@knowledgepixels.com) to get it)
 
 ## Nano Session #15
 
