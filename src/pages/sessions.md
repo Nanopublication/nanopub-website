@@ -14,7 +14,7 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 29 Oct, 19 Nov, 17 Dec.
+Upcoming sessions: 19 Nov, 17 Dec.
 
 ## Nano Session #16
 
@@ -22,7 +22,7 @@ _29 October 2023, 16:00 CET_
 
 Speakers:
 
-- [Barbara Magagna](https://partnersinfair.com/who/) on "ADOPTing Nanopubs for Observables - FAIR Descriptions for Variables Using I-ADOPT Compliant Templates" (demo and presentation)
+- [Barbara Magagna](https://partnersinfair.com/who/) on "ADOPTing Nanopubs for Observables - FAIR Descriptions for Variables Using I-ADOPT Compliant Templates" (presentation)
 - [Ronen Tamari](https://ronentk.github.io/) on "Sensemaking Networks Project Pitch" (presentation)
 
 ## Nano Session #15
