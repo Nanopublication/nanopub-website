@@ -14,7 +14,7 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 19 Nov, 17 Dec, 21 Jan, 25 Feb.
+Upcoming sessions: 17 Dec, 21 Jan, 25 Feb.
 
 ## Nano Session #17 (Special)
 
