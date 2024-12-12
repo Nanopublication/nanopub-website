@@ -16,6 +16,13 @@ Important Links:
 
 Upcoming sessions: 17 Dec, 21 Jan, 25 Feb.
 
+## Nano Session #18
+
+_17 December 2024, 16:00 CET_
+
+Speakers:
+- Tobias Kuhn and others on "Standardization of Nanopublications" (discussion)
+
 ## Nano Session #17 (Special)
 
 _19 November 2024, 16:00 CET_
