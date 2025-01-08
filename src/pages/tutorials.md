@@ -1,3 +1,3 @@
-# Nanopublication Tutorial
+# Nanopublication Tutorials
 
 _(under construction...)_
