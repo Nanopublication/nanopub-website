@@ -92,8 +92,8 @@ module.exports={
           "position": "left"
         },
         {
-          "to": "/tutorial",
-          "label": "Tutorial",
+          "to": "/tutorials",
+          "label": "Tutorials",
           "position": "left"
         },
         {
@@ -110,14 +110,6 @@ module.exports={
       ]
     },
     "image": "img/undraw_online.svg",
-    "footer": {
-      "links": [],
-      "copyright": "Copyright © 2022 Nanopublications",
-      "logo": {
-        "src": "img/favicon.ico",
-        "href": "https://maastrichtuniversity.nl/"
-      }
-    },
     zoom: {
       selector: '.markdown > img',
       config: {
