@@ -1,11 +1,11 @@
 :root {
-  --ifm-color-primary: #569ce3;
-  --ifm-color-primary-dark: #3b8cdf;
-  --ifm-color-primary-darker: #2e84dc;
-  --ifm-color-primary-darkest: #1f6dbc;
-  --ifm-color-primary-light: #71ace7;
-  --ifm-color-primary-lighter: #7eb4ea;
-  --ifm-color-primary-lightest: #a7cbf0;
+  --ifm-color-primary: #4c89c7;
+  --ifm-color-primary-dark: #3b7bbd;
+  --ifm-color-primary-darker: #3874b2;
+  --ifm-color-primary-darkest: #2e6093;
+  --ifm-color-primary-light: #6197ce;
+  --ifm-color-primary-lighter: #6b9ed1;
+  --ifm-color-primary-lightest: #8bb2db;
 }
 /* Change color here: https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
 */

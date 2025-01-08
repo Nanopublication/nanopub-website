@@ -92,6 +92,11 @@ module.exports={
           "position": "left"
         },
         {
+          "to": "/tutorial",
+          "label": "Tutorial",
+          "position": "left"
+        },
+        {
           "to": "/contact",
           "label": "Contact",
           "position": "left"
