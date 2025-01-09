@@ -6,8 +6,6 @@ The Nano Sessions connect the people who are interested in nanopublications and 
 [Knowledge Pixels](https://knowledgepixels.com/) hosts the first meetings, but we are happy to let others join and become hosts too. Do you want to share some insights, a problem you can’t solve, or a use case you are working on? Send an [email](mailto:philipp@knowledgepixels.com) to get a slot in an upcoming session.
 
 
-
-
 Important Links:
 
 - All sessions are in this [Zoom channel](https://vu-live.zoom.us/j/97176002956?pwd=UHh5MGJWNHpEcFZKbTA0Kzcrc29TQT09). Anyone can join without registration. 
@@ -15,6 +13,15 @@ Important Links:
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
 Upcoming sessions: 21 Jan, 25 Feb.
+
+
+## Nano Session #19
+
+_21 January 2025, 16:00 CET_
+
+Speakers:
+- [Anne Fouilloux ](https://www.simula.no/people/annef) on "Can _Science Live_ Break free from the Publishing Trap? Unlocking Research Findings for Action and Innovation." (presentation)
+- Second slot: open
 
 ## Nano Session #18
 
