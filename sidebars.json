@@ -1,5 +1,8 @@
 {
   "docs": [
     "guidelines", "examples", "network", "tools", "users"
+  ],
+  "tutorials": [
+    "tutorials/tutorials", "tutorials/eswc2025"
   ]
 }

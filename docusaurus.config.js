@@ -26,9 +26,7 @@ module.exports={
       "@docusaurus/preset-classic",
       {
         "docs": {
-          "showLastUpdateAuthor": true,
           "showLastUpdateTime": true,
-          "editUrl": "https://github.com/Nanopublication/nanopub-website/edit/main/website/",
           "path": "./docs",
           "breadcrumbs": false,
           "sidebarPath": require.resolve('./sidebars.json')
@@ -92,7 +90,7 @@ module.exports={
           "position": "left"
         },
         {
-          "to": "/tutorials",
+          "to": "docs/tutorials/",
           "label": "Tutorials",
           "position": "left"
         },
