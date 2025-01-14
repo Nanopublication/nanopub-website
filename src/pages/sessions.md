@@ -21,7 +21,7 @@ _21 January 2025, 16:00 CET_
 
 Speakers:
 - [Anne Fouilloux](https://www.simula.no/people/annef) on "Can _Science Live_ Break free from the Publishing Trap? Unlocking Research Findings for Action and Innovation." (presentation)
-- [Anatoly Scherbakov](https://yeti.sh/) on "Navigating Cyberspace: Exploring & Rendering Linked Data in the Terminal." (demo and presentation)
+- [Anatoly Scherbakov](https://yeti.sh/cv/) on "Navigating Cyberspace: Exploring & Rendering Linked Data in the Terminal." (demo and presentation)
 
 ## Nano Session #18
 
