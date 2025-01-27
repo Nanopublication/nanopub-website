@@ -28,7 +28,7 @@ Speakers:
 _17 December 2024, 16:00 CET_
 
 Speakers:
-- Tobias Kuhn and others on "Standardization of Nanopublications" (discussion)
+- [Tobias Kuhn](https://www.tkuhn.org) and others on "Standardization of Nanopublications" (discussion)
 
 ## Nano Session #17 (Special)
 
