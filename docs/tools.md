@@ -7,8 +7,8 @@ There are a few existing tools to access and publish nanopublications.
 
 ## 👩‍💻 User interfaces
 
-- [**Nanodash**](https://github.com/knowledgepixels/nanodash) is the official web service to browse and publish nanopublications.
-- The [Knowledge Collaboratory](https://collaboratory.semanticscience.org/) is a service to help annotate biomedical text, publish those annotations as nanopublications, and browse nanopublications.
+- [**Nanodash**](https://github.com/knowledgepixels/nanodash) is a nanopublication user interface offering easy-to-use templates for nanopublication creation, custom feeds, and search.
+- The [**Knowledge Collaboratory**](https://collaboratory.semanticscience.org/) is a service to help annotate biomedical text, publish those annotations as nanopublications, and browse nanopublications.
 
 ## 📚️ Libraries
 
