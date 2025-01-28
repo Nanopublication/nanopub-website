@@ -12,7 +12,7 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 21 Jan, 25 Feb.
+Upcoming sessions: 25 Feb, 25 Mar, 15 Apr, 20 May, 17 Jun.
 
 
 ## Nano Session #19
@@ -21,14 +21,14 @@ _21 January 2025, 16:00 CET_
 
 Speakers:
 - [Anne Fouilloux](https://www.simula.no/people/annef) on "Can _Science Live_ Break free from the Publishing Trap? Unlocking Research Findings for Action and Innovation." (presentation)
-- [Anatoly Scherbakov](https://yeti.sh/) on "Navigating Cyberspace: Exploring & Rendering Linked Data in the Terminal." (demo and presentation)
+- [Anatoly Scherbakov](https://yeti.sh/cv/) on "Navigating Cyberspace: Exploring & Rendering Linked Data in the Terminal." (demo and presentation)
 
 ## Nano Session #18
 
 _17 December 2024, 16:00 CET_
 
 Speakers:
-- Tobias Kuhn and others on "Standardization of Nanopublications" (discussion)
+- [Tobias Kuhn](https://www.tkuhn.org) and others on "Standardization of Nanopublications" (discussion)
 
 ## Nano Session #17 (Special)
 
