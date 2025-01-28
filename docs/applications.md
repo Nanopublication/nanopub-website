@@ -1,11 +1,9 @@
 ---
-id: users
-title: Users
+id: applications
+title: Applications
 ---
 
-A few systems are using nanopublications to store information.
-
-## Web services
+This is an incomplete list of nanopublication applications:
 
 - **[Knowledge Collaboratory](https://collaboratory.semanticscience.org)**: a service to help annotate biomedical claims, publish the annotations as nanopublications, and browse nanopublications.
 
@@ -14,8 +12,6 @@ A few systems are using nanopublications to store information.
 - **[RiverBench](https://w3id.org/riverbench)**: benchmark suite for RDF systems, which uses nanopublications to allow users to [publish their benchmark results](https://w3id.org/riverbench/v/dev/results).
 
 - **[RDF Stream Taxonomy (RDF-STaX)](https://w3id.org/stax/dev/nanopubs)**: uses nanopublications to make a *living literature review* of RDF streaming.
-
-## Libraries
 
 * [**fairworkflows**](https://github.com/fair-workflows/fairworkflows): a python library for constructing, modifying and publishing scientific workflows described using semantic technologies.
 
