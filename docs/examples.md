@@ -5,12 +5,19 @@ title: Examples
 
 Here are a few examples of published nanopublications:
 
-- [A nanopublication reporting an “inter-species interaction” where a bird ate an insect](http://purl.org/np/RAzquSkwsTAZm61nReG6MOjXEXUx8fNVfdWnAzyn6sOhU)
-- [A nanopublication expressing a protein-protein interaction (from WikiPathways)](http://purl.org/np/RAMc79WFgK30tHAeWj6PugKxfcqFsgErU2n8pLPJnwNrU)
-- [A nanopublication associating a gene with a disease (from DisGeNET)](http://purl.org/np/RAqknxBp9YPV_hY5nMa2yNlIzJCiX9k4OPgnyJdPatRtY)
-- [A nanopublication containing a review comment of a scientific manuscript](http://purl.org/np/RA1sViVmXf-W2aZW4Qk74KTaiD9gpLBPe2LhMsinHKKz8)
-- [A nanopublication retracting another nanopublication](http://purl.org/np/RAYskLSM5x29icArnWvo9nVrIVEN2mfPoDq3TQSgm-9kk)
-- [A nanopublication expressing that somebody knows somebody else](http://purl.org/np/RAlVr7Y9MllOq9A2GLVpCm3favw-uqOx2mQJgBVTfJXVw)
-- [A nanopublication stating that somebody has read a particular paper](http://purl.org/np/RAxPdvy5RN-jyPOMcBNEsUEn2CPBtAa3W0Ct3tbID4PiM)
-
-<!-- <img src="/img/DSRI_infrastructure_architecture_overview.png" alt="DSRI infrastructure " style={{maxWidth: '100%', maxHeight: '100%'}} /> -->
+- [`RANY9Bsjkm`](https://w3id.org/kpxl/pensoft/bdj/np/RANY9Bsjkm-AhRCMzjOaHCnVGauaR_zlY-Ew6L3gaMqU8)
+  is linking a species of beetles to a given forest type as habitat
+- [`RAypjyd0XF`](https://w3id.org/kpxl/ios/ds/np/RAypjyd0XFhaFD1XdZ_IlMniCr-2-RjN9ihfRMUs75TCI)
+  is introducing and defining a new concept ("genuine semantic publishing")
+- [`RAXgg_AZFl`](https://w3id.org/kpxl/pensoft/rio/np/RAXgg_AZFl8D0SF1QJcv7DBjHGBFt17VzX7KGJOcLmY5Y)
+  is expressing a hypothesis in the domain of ecology
+- [`RA1sViVmXf`](http://purl.org/np/RA1sViVmXf-W2aZW4Qk74KTaiD9gpLBPe2LhMsinHKKz8)
+  contains a review comment of a scientific manuscript
+- [`RAYskLSM5x`](http://purl.org/np/RAYskLSM5x29icArnWvo9nVrIVEN2mfPoDq3TQSgm-9kk)
+  declares the retraction of another nanopublication
+- [`RA9Xqzl_Z8`](http://purl.org/np/RA9Xqzl_Z8N10_tikW-coy0OGM-IvukSEyp0qbqPThT0s)
+  is expressing that the creator of the nanopublication is knowing somebody else
+- [`RAxPdvy5RN`](http://purl.org/np/RAxPdvy5RN-jyPOMcBNEsUEn2CPBtAa3W0Ct3tbID4PiM)
+  is stating that the creator has read a particular paper
+- [`RAwToTy-lT`](https://w3id.org/np/RAwToTy-lTyJDU9SkYryUp9yjrQx-rokX_M4sz85MQpmA#abc-table)
+  is defining an exemplary FAIR Digital Object (FDO)
