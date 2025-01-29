@@ -35,6 +35,6 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 You can find other tools in the GitHub organization: [Nanopublication](https://github.com/Nanopublication/)
 
-More informations about [Trusty URI on their website](http://trustyuri.net/)
+More informations about [Trusty URIs on their website](http://trustyuri.net/).
 
 [See this paper](https://arxiv.org/abs/1809.06532) for datasets using nanopublications:
