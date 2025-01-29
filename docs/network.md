@@ -3,26 +3,20 @@ id: network
 title: Network
 ---
 
-Nanopublications are published in a **decentralized network of servers**. This network is composed of multiple nanopublications servers deployed at various locations, such as universities, cf. [example server](https://np.petapico.org/) / [paper 1](http://arxiv.org/pdf/1411.2749) / [paper 2](https://doi.org/10.7717/peerj-cs.78)
+Nanopublications are published in a **decentralized network of services** with separated publishing/retrieval and querying layers.
 
-## 🔭 Nanopub monitor
+## 🌐 Nanopub Monitor
 
-A service to see **see all servers** in the nanopublications network by accessing the [**nanopub monitor**](http://purl.org/nanopub/monitor) ([monitor code](https://github.com/tkuhn/nanopub-monitor/))
+The **Nanopub Monitor** ([instance](http://purl.org/nanopub/monitor), [code](https://github.com/tkuhn/nanopub-monitor/)) is a service to observe all services in the nanopublication network.
 
-## 🗄️ Nanopublications servers
+## 🗄️ Nanopub Server/Registry
 
-Each nanopublication server is composed of 3 core services:
+There are currently two generations of services for publishing and retrieving nanopublications in a decentralized fashion.
 
-- Nanopub API: [instance 1](http://grlc.nanopubs.lod.labs.vu.nl/api/local/local/) / [instance 2](http://130.60.24.146:7881/api/local/local/)
-- Tapas interface: [instance 1](http://grlc.nanopubs.lod.labs.vu.nl/tapas/tapas.html) / [instance 2](http://130.60.24.146:7881/tapas/tapas.html)
-- Quad Pattern Fragments: [instance 1](http://ldf.nanopubs.lod.labs.vu.nl/np) / [instance 2](http://130.60.24.146:7882/np)
+The **Nanopub Server** ([instance](https://np.knowledgepixels.com/), [code](https://github.com/tkuhn/nanopub-server)) forms the _first-generation_ publishing/retrieval service.
 
-[Source code for the server](https://github.com/tkuhn/nanopub-server)
+We will soon transition to the _second-generation_ publishing/retrieval services in the form of the **Nanopub Registry** ([instance](https://registry.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-registry)).
 
-## 💫 SPARQL endpoint
+## 💫 Nanopub Query
 
-A public SPARQL endpoint is available to directly query the nanopublications network at [virtuoso.nps.petapico.org/sparql](https://virtuoso.nps.petapico.org/sparql)
-
-## ✅ Validators
-
-And there are **validators** for nanopublications: [instance 1](https://nanopub.petapico.org/) / [instance 2](http://app.tkuhn.eculture.labs.vu.nl/nanopub-validator/) ([source code](https://github.com/tkuhn/nanopub-validator))
+**Nanopub Query** ([instance](https://query.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-query)) forms the second-generation of services to query nanopublications. They allow for decentrally querying the published nanopublications via a number of SPARQL endpoint covering different subsets and aspects of nanopublications.
