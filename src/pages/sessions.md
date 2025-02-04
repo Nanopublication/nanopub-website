@@ -14,7 +14,7 @@ Important Links:
 
 Upcoming sessions: 25 Feb, 25 Mar, 15 Apr, 20 May, 17 Jun.
 
-## Nano Session #19
+## Nano Session #20
 
 _25 February 2025, 16:00 CET_
 
