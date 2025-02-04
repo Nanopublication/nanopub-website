@@ -14,6 +14,13 @@ Important Links:
 
 Upcoming sessions: 25 Feb, 25 Mar, 15 Apr, 20 May, 17 Jun.
 
+## Nano Session #19
+
+_25 February 2025, 16:00 CET_
+
+Speakers:
+- [Łukasz Jaremek](https://www.linkedin.com/in/%C5%82ukasz-jaremek-840179211/) and [Mieszko Mirgos](https://www.linkedin.com/in/mieszko-mirgos-0079ba1b8/) on "Nanopublications Based Social Network: Proving the Concept." (demo)
+- Second slot: open 
 
 ## Nano Session #19
 
