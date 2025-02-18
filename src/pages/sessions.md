@@ -20,7 +20,7 @@ _25 February 2025, 16:00 CET_
 
 Speakers:
 - [Łukasz Jaremek](https://www.linkedin.com/in/%C5%82ukasz-jaremek-840179211/) and [Mieszko Mirgos](https://www.linkedin.com/in/mieszko-mirgos-0079ba1b8/) on "Nanopublications Based Social Network: Proving the Concept." (demo)
-- Second slot: open 
+- Second slot: open (drop a [note](mailto:philipp@knowledgepixels.com) to get it)
 
 ## Nano Session #19
 
