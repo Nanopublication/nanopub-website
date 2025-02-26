@@ -12,7 +12,7 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 25 Feb, 25 Mar, 15 Apr, 20 May, 17 Jun.
+Upcoming sessions: 25 Mar, 15 Apr, 20 May, 17 Jun.
 
 ## Nano Session #20
 
@@ -20,7 +20,6 @@ _25 February 2025, 16:00 CET_
 
 Speakers:
 - [Łukasz Jaremek](https://www.linkedin.com/in/%C5%82ukasz-jaremek-840179211/) and [Mieszko Mirgos](https://www.linkedin.com/in/mieszko-mirgos-0079ba1b8/) on "Nanopublications Based Social Network: Proving the Concept." (demo)
-- Second slot: open (drop a [note](mailto:philipp@knowledgepixels.com) to get it)
 
 ## Nano Session #19
 
