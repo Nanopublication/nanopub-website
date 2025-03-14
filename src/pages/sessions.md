@@ -14,6 +14,14 @@ Important Links:
 
 Upcoming sessions: 25 Mar, 15 Apr, 20 May, 17 Jun.
 
+## Nano Session #21
+
+_25 March 2025, 16:00 CET_
+Speakers:
+- [Kristina Hettne](https://www.universiteitleiden.nl/medewerkers/kristina-hettne#tab-1) and [Alessa Gambardella](https://www.universiteitleiden.nl/en/staffmembers/alessa-gambardella#tab-1) on "Help the Computer Help you Find Data: Self-report Research Findings with LEIbits" (presentation)
+- [Barbara Magagna](https://partnersinfair.com/who/) on "Title tba" (presentation)
+
+
 ## Nano Session #20
 
 _25 February 2025, 16:00 CET_
