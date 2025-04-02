@@ -8,7 +8,7 @@ The Nano Sessions connect the people who are interested in nanopublications and 
 
 Important Links:
 
-- All sessions are in this [Zoom channel](https://vu-live.zoom.us/j/97176002956?pwd=UHh5MGJWNHpEcFZKbTA0Kzcrc29TQT09). Anyone can join without registration. 
+- All sessions are in this [Zoom channel](https://vu-live.zoom.us/j/91057846609?pwd=ON5eF2Ovs1fY8KQUCnEvSM2Eltfod1.1). Anyone can join without registration. 
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
