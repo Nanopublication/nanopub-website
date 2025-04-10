@@ -14,6 +14,14 @@ Important Links:
 
 Upcoming sessions: 15 Apr, 20 May, 17 Jun.
 
+## Nano Session #22
+
+_15 April 2025, 16:00 CEST_
+
+Speakers:
+- [Jorrit Poelen](https://jhpoelen.nl) on "Global Biotic Interactions (GloBI): Continuously Publishing Data Review Papers and Nanopubs"
+- [Vincent Emonet](https://vemonet.github.io/) on "From Question to Queries: a Tutorial About Efficient SPARQL Generation with Large Language Models"
+
 ## Nano Session #21
 
 _25 March 2025, 16:00 CET_
