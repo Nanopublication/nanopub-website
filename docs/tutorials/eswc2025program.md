@@ -79,7 +79,7 @@ Module 3 is the first afternoon session.
 
 - GO FAIR Foundation
 - Knowledge Collaboratory
-- RiverBench and the RDF Stream Taxonomy
+- [RiverBench](https://w3id.org/riverbench/v/dev/documentation/reporting-results) and the [RDF Stream Taxonomy](https://rdf-stax.github.io/dev/nanopubs/)
 
 ### Individual projects, part 3
 
