@@ -33,9 +33,9 @@ Module 1 is the first morning session.
 :::
 
 - Manual creation: [Nanodash](https://nanodash.knowledgepixels.com/) user interface
-- Automatic creation: Libraries / command-line tools
-- Creating nanopublications in other environments (DSW)
-- Nanopublication network: the servers forming the nanopublication ecosystem
+- Automatic creation via libraries and command-line tools: [nanopub-java](https://github.com/Nanopublication/nanopub-java), [nanopub-py](https://github.com/Nanopublication/nanopub-py), [nanopub-rs](https://github.com/vemonet/nanopub-rs)
+- Creating nanopublications in other environments: [Data Stewardship Wizard](https://ds-wizard.org/)
+- Nanopublication network: [the servers forming the nanopublication ecosystem](https://monitor.knowledgepixels.com/)
 
 
 ## Module 2
