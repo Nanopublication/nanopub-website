@@ -24,7 +24,7 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 ### 🐍 Python
 
-- [**nanopub**](https://github.com/fair-workflows/nanopub): a python implementation to sign, verify, and publish nanopubs.
+- [**nanopub**](https://nanopublication.github.io/nanopub-py): a python implementation to sign, verify, and publish nanopubs.
 
 ### 🚀 JavaScript
 
