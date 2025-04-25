@@ -12,15 +12,21 @@ Important Links:
 - We use these [notes](https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#) during the sessions and for the record.
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
-Upcoming sessions: 15 Apr, 20 May, 17 Jun. Summer break afterwards.
+Upcoming sessions: 20 May, 17 Jun. Summer break afterwards.
+
+## Nano Session #23
+
+_20 May 2025, 16:00 CEST_
+
+Speaker:
+- [Vincent Emonet](https://vemonet.github.io/) on "From Question to Queries: a Tutorial About Efficient SPARQL Generation with Large Language Models"
 
 ## Nano Session #22
 
 _15 April 2025, 16:00 CEST_
 
-Speakers:
+Speaker:
 - [Jorrit Poelen](https://jhpoelen.nl) on "Global Biotic Interactions (GloBI): Continuously Publishing Data Review Papers and Nanopubs"
-- [Vincent Emonet](https://vemonet.github.io/) on "From Question to Queries: a Tutorial About Efficient SPARQL Generation with Large Language Models"
 
 ## Nano Session #21
 
