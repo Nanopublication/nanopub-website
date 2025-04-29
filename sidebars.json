@@ -1,6 +1,6 @@
 {
   "docs": [
-    "guidelines", "examples", "architecture", "network", "tools", "applications"
+    "guidelines", "examples", "network", "tools", "applications"
   ],
   "tutorials": [
     "tutorials/tutorials", "tutorials/eswc2025"
