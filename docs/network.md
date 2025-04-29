@@ -9,13 +9,9 @@ Nanopublications are published in a **decentralized network of services** with s
 
 The **Nanopub Monitor** ([instance](http://purl.org/nanopub/monitor), [code](https://github.com/tkuhn/nanopub-monitor/)) is a service to observe all services in the nanopublication network.
 
-## 🗄️ Nanopub Server/Registry
+## 🗄️ Nanopub Registry
 
-There are currently two generations of services for publishing and retrieving nanopublications in a decentralized fashion.
-
-The **Nanopub Server** ([instance](https://np.knowledgepixels.com/), [code](https://github.com/tkuhn/nanopub-server)) forms the _first-generation_ publishing/retrieval service.
-
-We will soon transition to the _second-generation_ publishing/retrieval services in the form of the **Nanopub Registry** ([instance](https://registry.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-registry)).
+**Nanopub Registry** is the second-generation kind of service for publishing and retrieving nanopublications in a decentralized fashion: ([instance](https://registry.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-registry)).
 
 ## 💫 Nanopub Query
 
