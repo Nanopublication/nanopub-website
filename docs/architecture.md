@@ -1,6 +1,6 @@
 ---
-id: network
-title: Architecture and Network
+id: architecture
+title: Technical Architecture
 ---
 
 ## Overall Architecture
@@ -17,7 +17,9 @@ This is the overall architecture of the current nanopublication ecosystem:
 
 ## Core Components
 
-**Nanopub Registry** is the second-generation kind of service for publishing and retrieving nanopublications in a decentralized fashion: ([instance](https://registry.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-registry)).
+**Nanopub Registry** ([instance](https://registry.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-registry)) is the second-generation kind of service for publishing and retrieving nanopublications in a decentralized fashion.
+
+The legacy **nanopub-server** ([instance](https://np.knowledgepixels.com/), [code](https://github.com/tkuhn/nanopub-server)) is still used to keep the old (unsigned) nanopublications, but has otherwise no longer a function in the latest generation of the ecosystem.
 
 **Nanopub Query** ([instance](https://query.knowledgepixels.com/), [code](https://github.com/knowledgepixels/nanopub-query)) forms the second-generation of services to query nanopublications.
 They allow for decentrally querying the published nanopublications via a number of SPARQL endpoints covering different subsets and aspects of nanopublications.
@@ -38,3 +40,8 @@ The **Nanopub Monitor** ([instance](http://purl.org/nanopub/monitor), [code](htt
 ## Libraries
 
 See [Tools](/docs/tools).
+
+
+## Third-party Systems
+
+See [Tools](/docs/applications).
