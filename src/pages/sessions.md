@@ -14,12 +14,6 @@ Important Links:
 
 Upcoming sessions: 20 May, 17 Jun. Summer break afterwards.
 
-## Nano Session #23
-
-_20 May 2025, 16:00 CEST_
-
-Speaker:
-- [Vincent Emonet](https://vemonet.github.io/) on "From Question to Queries: a Tutorial About Efficient SPARQL Generation with Large Language Models"
 
 ## Nano Session #22
 
