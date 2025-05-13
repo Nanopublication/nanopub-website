@@ -14,6 +14,13 @@ Important Links:
 
 Upcoming sessions: 20 May, 17 Jun. Summer break afterwards.
 
+## Nano Session #23
+
+_20 May 2025, 16:00 CEST_
+
+Speakers:
+- [Anne Fouilloux](https://www.simula.no/people/annef) on "Unlocking Research Findings for Action and Innovation – Update on _Science Live_."
+- [Tobias Kuhn](https://www.tkuhn.org) on "Handles or URIs for FAIR Digital Objects? First Impressions of a Starting Initiative to Align the Two Approaches"
 
 ## Nano Session #22
 
