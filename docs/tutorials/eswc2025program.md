@@ -5,6 +5,8 @@ title: Program of the Nanopublication Tutorial at ESWC 2025
 
 This is the program with schedule and materials of the [Nanopublication Tutorial at ESWC 2025](/docs/tutorials/eswc2025).
 
+**Date:** 2 June 2025
+
 _This page is still in draft status and its content is subject to change._
 
 ## Module 1
@@ -13,7 +15,7 @@ Module 1 is the first morning session.
 
 ### What are nanopublications?
 
-:::info speaker: Tobias Kuhn | 30 minutes
+:::info speaker: Tobias Kuhn | 9:00-9:30
 :::
 
 - Getting an idea of what [nanopublications](https://nanopub.net/) are by looking at a number of [examples](https://nanopub.net/docs/examples)
@@ -22,14 +24,14 @@ Module 1 is the first morning session.
 
 ### Individual projects, part 1
 
-:::info 15 minutes
+:::info 9:30-9:45
 :::
 
 - Participants set up their [nanopublication profile](https://nanodash.knowledgepixels.com/profile) and come up with a small project for the day
 
 ### Creating and publishing nanopublications
 
-:::info speakers: Tobias Kuhn, Vincent Emonet, Barbara Magagna | 45 minutes
+:::info speakers: Tobias Kuhn, Vincent Emonet, Barbara Magagna | 9:45-10:30
 :::
 
 - Manual creation: [Nanodash](https://nanodash.knowledgepixels.com/) user interface
@@ -44,7 +46,7 @@ Module 2 is the second morning session.
 
 ### Creating nanopublication templates
 
-:::info speaker: Tobias Kuhn | 30 minutes
+:::info speaker: Tobias Kuhn | 11:00-11:30
 :::
 
 - How to define template structure and use placeholders
@@ -53,14 +55,14 @@ Module 2 is the second morning session.
 
 ### Individual projects, part 2
 
-:::info 30 minutes
+:::info 11:30-12:00
 :::
 
 - Participants continue on their own small project.
 
 ### Querying nanopublications
 
-:::info speaker: Tobias Kuhn | 30 minutes
+:::info speaker: Tobias Kuhn | 12:00-12:30
 :::
 
 - [Nanopub Query](https://github.com/knowledgepixels/nanopub-query): how nanopublications are loaded into triple stores on the network
@@ -74,7 +76,7 @@ Module 3 is the first afternoon session.
 
 ### Applications, part 1
 
-:::info speakers: Barbara Magagna, Vincent Emonet, Piotr Sowiński | 30 minutes
+:::info speakers: Barbara Magagna, Vincent Emonet, Piotr Sowiński | 14:00-14:30
 :::
 
 - GO FAIR Foundation
@@ -83,14 +85,14 @@ Module 3 is the first afternoon session.
 
 ### Individual projects, part 3
 
-:::info 30 minutes
+:::info 14:30-15:00
 :::
 
 - Participants continue on their own small project.
 
 ### Trust and communities
 
-:::info speaker: Tobias Kuhn | 30 minutes
+:::info speaker: Tobias Kuhn | 15:00-15:30
 :::
 
 - Introductions and approvals: creating social links with nanopublications
@@ -104,21 +106,21 @@ Module 3 is the second afternoon session.
 
 ### Applications, part 2
 
-:::info speaker: Tobias Kuhn | 15 minutes
+:::info speaker: Tobias Kuhn | 16:00-16:15
 :::
 
 - [Journal Pilots](https://nanodash.knowledgepixels.com/connectorlist): how nanopublications can accompany journal articles and thereby get properly peer-reviewed
 
 ### Individual projects, part 4
 
-:::info 90 minutes
+:::info 16:15-17:45
 :::
 
 - Participants finish own small project and present it
 
 ### Closing
 
-:::info speaker: Tobias Kuhn | 15 minutes
+:::info speaker: Tobias Kuhn | 17:45-18:00
 :::
 
 - General info about how to keep in touch / updated on nanopublications
