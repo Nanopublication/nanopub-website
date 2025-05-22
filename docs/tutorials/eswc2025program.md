@@ -18,7 +18,7 @@ Module 1 is the first morning session.
 :::info speaker: Tobias Kuhn | 9:00-9:30
 :::
 
-- Getting an idea of what [nanopublications](https://nanopub.net/) are by looking at a number of [examples](https://nanopub.net/docs/examples)
+- Introduction to the concept and technology of [nanopublications](https://nanopub.net/) with [examples](https://nanopub.net/docs/examples)
 - The long-term vision of a nanopublication ecosystem
 - Technical architecture overview
 
@@ -109,7 +109,7 @@ Module 3 is the second afternoon session.
 :::info speaker: Tobias Kuhn | 16:00-16:15
 :::
 
-- [Journal Pilots](https://nanodash.knowledgepixels.com/connectorlist): how nanopublications can accompany journal articles and thereby get properly peer-reviewed
+- FAIR Digital Objects (FDOs) with nanopublications
 
 ### Individual projects, part 4
 
@@ -123,5 +123,5 @@ Module 3 is the second afternoon session.
 :::info speaker: Tobias Kuhn | 17:45-18:00
 :::
 
-- General info about how to keep in touch / updated on nanopublications
+- Discussing / using / contributing to the nanopublication ecosystem
 - Closing remarks
