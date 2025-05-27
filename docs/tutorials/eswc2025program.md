@@ -21,6 +21,8 @@ Module 1 is the first morning session.
 - Introduction to the concept and technology of [nanopublications](https://nanopub.net/) with [examples](https://nanopub.net/docs/examples)
 - The long-term vision of a nanopublication ecosystem
 - Technical architecture overview
+- Introduction to the [Nanodash](https://nanodash.knowledgepixels.com/) UI
+- FAIR Digital Objects (FDOs) and nanopublications
 
 ### Individual projects, part 1
 
@@ -34,7 +36,7 @@ Module 1 is the first morning session.
 :::info speakers: Tobias Kuhn, Vincent Emonet, Barbara Magagna | 9:45-10:30
 :::
 
-- Manual creation: [Nanodash](https://nanodash.knowledgepixels.com/) user interface
+- Manual creation with [Nanodash](https://nanodash.knowledgepixels.com/)
 - Automatic creation via libraries and command-line tools: [nanopub-java](https://github.com/Nanopublication/nanopub-java), [nanopub-py](https://github.com/Nanopublication/nanopub-py), [nanopub-rs](https://github.com/vemonet/nanopub-rs)
 - Creating nanopublications in other environments: [Data Stewardship Wizard](https://ds-wizard.org/)
 - Nanopublication network: [the servers forming the nanopublication ecosystem](https://monitor.knowledgepixels.com/)
@@ -44,7 +46,7 @@ Module 1 is the first morning session.
 
 Module 2 is the second morning session.
 
-### Creating nanopublication templates
+### Nanopublication templates
 
 :::info speaker: Tobias Kuhn | 11:00-11:30
 :::
@@ -76,11 +78,10 @@ Module 3 is the first afternoon session.
 
 ### Applications, part 1
 
-:::info speakers: Barbara Magagna, Vincent Emonet, Piotr Sowiński | 14:00-14:30
+:::info speakers: Barbara Magagna, Piotr Sowiński | 14:00-14:30
 :::
 
 - GO FAIR Foundation
-- Knowledge Collaboratory
 - [RiverBench](https://w3id.org/riverbench/v/dev/documentation/reporting-results) and the [RDF Stream Taxonomy](https://rdf-stax.github.io/dev/nanopubs/)
 
 ### Individual projects, part 3
@@ -106,10 +107,11 @@ Module 3 is the second afternoon session.
 
 ### Applications, part 2
 
-:::info speaker: Tobias Kuhn | 16:00-16:15
+:::info speaker: Vincent Emonet | 16:00-16:15
 :::
 
-- FAIR Digital Objects (FDOs) with nanopublications
+- Knowledge Collaboratory
+
 
 ### Individual projects, part 4
 
