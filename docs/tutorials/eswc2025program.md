@@ -7,7 +7,7 @@ This is the program with schedule and materials of the [Nanopublication Tutorial
 
 **Date:** 2 June 2025
 
-## Documents
+## Documents and Links
 
 - [Slides](https://docs.google.com/presentation/d/1sHo9jR3MbzwSthHbRny_TRv7cUmh0fNxcW2WLGjB1G0/edit?usp=sharing)
 - [Notes](https://docs.google.com/document/d/1zn4qecgooXv6M-2CZBs1EuD-bjgsyA42rKvwlKMBCE8/edit?usp=sharing)
