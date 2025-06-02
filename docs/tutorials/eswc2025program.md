@@ -7,7 +7,11 @@ This is the program with schedule and materials of the [Nanopublication Tutorial
 
 **Date:** 2 June 2025
 
-_This page is still in draft status and its content is subject to change._
+## Documents
+
+- [Slides](https://docs.google.com/presentation/d/1sHo9jR3MbzwSthHbRny_TRv7cUmh0fNxcW2WLGjB1G0/edit?usp=sharing)
+- [Notes](https://docs.google.com/document/d/1zn4qecgooXv6M-2CZBs1EuD-bjgsyA42rKvwlKMBCE8/edit?usp=sharing)
+- [Nanopub Demo](https://knowledgepixels.com/nanopub-demo/) (in particular for people joining the tutorial later to catch up)
 
 ## Module 1
 
@@ -21,8 +25,8 @@ Module 1 is the first morning session.
 - Introduction to the concept and technology of [nanopublications](https://nanopub.net/) with [examples](https://nanopub.net/docs/examples)
 - The long-term vision of a nanopublication ecosystem
 - Technical architecture overview
-- Introduction to the [Nanodash](https://nanodash.knowledgepixels.com/) UI
-- FAIR Digital Objects (FDOs) and nanopublications
+- Introduction to [Nanodash](https://nanodash.knowledgepixels.com/)
+- Nanopublication network: [the servers forming the nanopublication ecosystem](https://monitor.knowledgepixels.com/)
 
 ### Individual projects, part 1
 
@@ -36,10 +40,8 @@ Module 1 is the first morning session.
 :::info speakers: Tobias Kuhn, Vincent Emonet, Barbara Magagna | 9:45-10:30
 :::
 
-- Manual creation with [Nanodash](https://nanodash.knowledgepixels.com/)
-- Automatic creation via libraries and command-line tools: [nanopub-java](https://github.com/Nanopublication/nanopub-java), [nanopub-py](https://github.com/Nanopublication/nanopub-py), [nanopub-rs](https://github.com/vemonet/nanopub-rs)
+- Programmatic creation via libraries and command-line tools: [nanopub-java](https://github.com/Nanopublication/nanopub-java), [nanopub-py](https://github.com/Nanopublication/nanopub-py), [nanopub-rs](https://github.com/vemonet/nanopub-rs)
 - Creating nanopublications in other environments: [Data Stewardship Wizard](https://ds-wizard.org/)
-- Nanopublication network: [the servers forming the nanopublication ecosystem](https://monitor.knowledgepixels.com/)
 
 
 ## Module 2
