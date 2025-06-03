@@ -11,10 +11,9 @@ This is the program with schedule and materials of the [Nanopublication Tutorial
 
 - [Slides](https://docs.google.com/presentation/d/1sHo9jR3MbzwSthHbRny_TRv7cUmh0fNxcW2WLGjB1G0/edit?usp=sharing)
 - [Nanopub Demo](https://knowledgepixels.com/nanopub-demo/) (in particular for people joining the tutorial later to catch up)
+- Video recordings: [Module 1](https://youtu.be/4pGw-RqKKik), [Module 2](https://youtu.be/q5LRHdSlX3k), [Module 3](https://youtu.be/Qcb_GscPyC0), [Module 4](https://youtu.be/C59O7HR4wKM)
 
 ## Module 1
-
-Module 1 is the first morning session.
 
 - [Video recording](https://youtu.be/4pGw-RqKKik)
 
@@ -47,8 +46,6 @@ Module 1 is the first morning session.
 
 ## Module 2
 
-Module 2 is the second morning session.
-
 - [Video recording](https://youtu.be/q5LRHdSlX3k)
 
 ### Applications, part 1
@@ -77,8 +74,6 @@ Module 2 is the second morning session.
 
 ## Module 3
 
-Module 3 is the first afternoon session.
-
 - [Video recording](https://youtu.be/Qcb_GscPyC0)
 
 ### Applications, part 2
@@ -106,8 +101,6 @@ Module 3 is the first afternoon session.
 
 
 ## Module 4
-
-Module 4 is the second afternoon session.
 
 - [Video recording](https://youtu.be/C59O7HR4wKM)
 
