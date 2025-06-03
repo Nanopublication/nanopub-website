@@ -16,6 +16,8 @@ This is the program with schedule and materials of the [Nanopublication Tutorial
 
 Module 1 is the first morning session.
 
+- [Video recording](https://youtu.be/4pGw-RqKKik)
+
 ### What are nanopublications?
 
 :::info speaker: Tobias Kuhn | 9:00-9:30
@@ -47,6 +49,7 @@ Module 1 is the first morning session.
 
 Module 2 is the second morning session.
 
+- [Video recording](https://youtu.be/q5LRHdSlX3k)
 
 ### Applications, part 1
 
@@ -76,6 +79,8 @@ Module 2 is the second morning session.
 
 Module 3 is the first afternoon session.
 
+- [Video recording](https://youtu.be/Qcb_GscPyC0)
+
 ### Applications, part 2
 
 :::info speaker: Vincent Emonet | 16:00-16:15
@@ -101,6 +106,10 @@ Module 3 is the first afternoon session.
 
 
 ## Module 4
+
+Module 4 is the second afternoon session.
+
+- [Video recording](https://youtu.be/C59O7HR4wKM)
 
 ### Trust and communities
 
