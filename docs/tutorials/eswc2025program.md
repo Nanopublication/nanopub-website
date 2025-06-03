@@ -113,8 +113,6 @@ This is the program with schedule and materials of the [Nanopublication Tutorial
 - Trust algorithms: establishing trust from a decentralized setting
 - [Nanopub Registry](https://github.com/knowledgepixels/nanopub-registry) and quotas: scalable and robust publishing infrastructure
 
-Module 3 is the second afternoon session.
-
 ### Individual projects, part 4
 
 :::info 16:15-17:45
