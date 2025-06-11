@@ -14,6 +14,13 @@ Important Links:
 
 Upcoming sessions: 17 Jun. Summer break afterwards.
 
+## Nano Session #24
+
+_17 June 2025, 16:00 CEST_
+
+Speaker:  
+- [Jamie McCusker](https://www.linkedin.com/in/jpmccu/) on "Whyis: a nano-scale knowledge graph publishing, management, and analysis framework"
+
 ## Nano Session #23
 
 _20 May 2025, 16:00 CEST_
