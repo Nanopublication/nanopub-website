@@ -16,7 +16,7 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 ### ☕️ Java
 
-- [**nanopub-java**](https://github.com/Nanopublication/nanopub-java) ([paper](https://arxiv.org/abs/1508.04977)): the official implementation to sign, verify, and publish nanopubs.
+- [**nanopub-java**](https://nanopublication.github.io/nanopub-java/) ([paper](https://arxiv.org/abs/1508.04977)): the official implementation to sign, verify, and publish nanopubs.
 
 ### 🪄 Multi-platform
 
