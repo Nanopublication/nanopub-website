@@ -28,7 +28,7 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 ### 🚀 JavaScript
 
-- [**nanopub/display**](https://github.com/vemonet/nanopub-display): a standard web component to easily display nanopublications in pure HTML, or any existing framework.
+- [**nanopub/display**](https://github.com/nanopublication/nanopub-js): a standard web component to easily display nanopublications in pure HTML, or any existing framework.
 - [**nanopub/utils**](https://github.com/knowledgepixels/nanopub-utils): a TypeScript/JavaScript library with various functions to work with nanopubs (e.g. fetch nanopubs).
 
 ## 🔗 Related links
