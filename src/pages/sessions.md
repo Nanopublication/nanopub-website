@@ -13,11 +13,19 @@ Important Links:
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
 
+## Nano Session 25
+
+_4 November 2025, 16:00 CET_
+
+Speakers:
+- Vincent Emonet on "SPARQL query writing: metadata is all we need"
+- Joel Dietz on "Lessons from Levin Lab: Using Nanopubs and Probabilistic Knowledge Graphs to Formally Validate Hypotheses"
+
 ## Nano Session #24
 
 _23 September 2025, 16:00 CEST_
 
-Speaker:  
+Speaker:
 - [Jamie McCusker](https://www.linkedin.com/in/jpmccu/) on "Whyis: a nano-scale knowledge graph publishing, management, and analysis framework"
 
 ## Nano Session #23
