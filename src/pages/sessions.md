@@ -13,6 +13,15 @@ Important Links:
 - The meetings are open to everyone and invitations are sent out by email. Subscribe to our [Google Group](https://groups.google.com/g/nanopub-users/) by hitting _Ask to join group_ and be notified.
 
 
+## Nano Session 26
+
+_2 December 2025, 16:00 CET_
+
+Speakers:
+
+TBD
+
+
 ## Nano Session 25
 
 _4 November 2025, 16:00 CET_
