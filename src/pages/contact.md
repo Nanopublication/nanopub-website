@@ -11,3 +11,7 @@ Join the conversation on nanopublications by subscribing to the [nanopub users m
 # Mastodon
 
 We are also on [Mastodon](https://mas.to/@nanopub).
+
+# About
+
+nanopub.net is managed by the Nanopublication Association, a non-profit organization based in Zurich, Switzerland (association@nanopub.net).
