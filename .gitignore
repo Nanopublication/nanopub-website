@@ -5,7 +5,7 @@ build
 # Yarn files
 .yarn/
 .pnp*.[cm]js
-.yarnrc.yml
+# .yarnrc.yml
 pnpm-lock.yaml
 
 # generated files

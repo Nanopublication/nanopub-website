@@ -24,7 +24,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn install --frozen-lockfile
+          corepack enable
+          yarn install --immutable
+
 
       - name: Build website
         run: |
