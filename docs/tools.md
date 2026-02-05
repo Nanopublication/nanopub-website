@@ -7,8 +7,10 @@ There are a few existing tools to access and publish nanopublications.
 
 ## 👩‍💻 User interfaces
 
-- [**Nanodash**](https://github.com/knowledgepixels/nanodash) is a nanopublication user interface offering easy-to-use templates for nanopublication creation, custom feeds, and search.
-- The [**Knowledge Collaboratory**](https://collaboratory.semanticscience.org/) is a service to help annotate biomedical text, publish those annotations as nanopublications, and browse nanopublications.
+- [**Nanodash**](https://github.com/knowledgepixels/nanodash) is a nanopublication user interface offering easy-to-use
+  templates for nanopublication creation, custom feeds, and search.
+- The [**Knowledge Collaboratory**](https://collaboratory.semanticscience.org/) is a service to help annotate biomedical
+  text, publish those annotations as nanopublications, and browse nanopublications.
 
 ## 📚️ Libraries
 
@@ -16,20 +18,23 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 ### ☕️ Java
 
-- [**nanopub-java**](https://nanopublication.github.io/nanopub-java/) ([paper](https://arxiv.org/abs/1508.04977)): the official implementation to sign, verify, and publish nanopubs.
-
-### 🪄 Multi-platform
-
-- [**nanopub-rs**](https://vemonet.github.io/nanopub-rs/): a comprehensive cross-platform toolkit to sign, publish, and verify nanopublications.
+- [**nanopub-java**](https://nanopublication.github.io/nanopub-java/) ([paper](https://arxiv.org/abs/1508.04977)): the
+  official implementation to sign, verify, and publish nanopubs.
 
 ### 🐍 Python
 
-- [**nanopub-py**](https://nanopublication.github.io/nanopub-py/): a python implementation to sign, verify, and publish nanopubs.
+- [**nanopub-py**](https://nanopublication.github.io/nanopub-py/): a Python implementation to sign, verify, and publish
+  nanopubs.
 
 ### 🚀 JavaScript
 
-- [**nanopub/display**](https://github.com/nanopublication/nanopub-js): a standard web component to easily display nanopublications in pure HTML, or any existing framework.
-- [**nanopub/utils**](https://github.com/knowledgepixels/nanopub-utils): a TypeScript/JavaScript library with various functions to work with nanopubs (e.g. fetch nanopubs).
+- [**nanopub-js**](https://github.com/nanopublication/nanopub-js): A TypeScript library for creating, signing,
+  publishing, and querying nanopublications.
+
+### 🪄 Multi-platform
+
+- [**nanopub-rs**](https://vemonet.github.io/nanopub-rs/): a comprehensive cross-platform toolkit to sign, publish, and
+  verify nanopublications.
 
 ## 🔗 Related links
 
@@ -37,4 +42,4 @@ You can find other tools in the GitHub organization: [Nanopublication](https://g
 
 More informations about [Trusty URIs on their website](http://trustyuri.net/).
 
-[See this paper](https://arxiv.org/abs/1809.06532) for datasets using nanopublications:
+[See this paper](https://arxiv.org/abs/1809.06532) for datasets using nanopublications.
