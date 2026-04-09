@@ -20,7 +20,7 @@
     "@docusaurus/preset-classic": "^3.10.0",
     "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.0.1",
-    "@nanopub/nanopub-js": "^0.1.0",
+    "@nanopub/nanopub-js": "^0.1.1",
     "clsx": "^2.1.1",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "dompurify": "^3.3.1",

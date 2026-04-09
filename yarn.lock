@@ -3555,23 +3555,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nanopub/nanopub-js@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@nanopub/nanopub-js@npm:0.1.0"
+"@nanopub/nanopub-js@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@nanopub/nanopub-js@npm:0.1.1"
   dependencies:
-    "@nanopub/sign": "npm:^0.1.10"
     "@rdfjs/data-model": "npm:^2.1.1"
     n3: "npm:^1.26.0"
-    rdf-canonize: "npm:^4.0.1"
+    rdf-canonize: "npm:^5.0.0"
     rdf-js: "npm:^4.0.2"
-  checksum: 10c0/ca9358fdd78b9b423dec36ac5e255d6b1f8288788bc991edbc6ef48ad254c22d623530161d454b98e92940cbef537fb222f22e5136f63486cd2d36bfe8079400
-  languageName: node
-  linkType: hard
-
-"@nanopub/sign@npm:^0.1.10":
-  version: 0.1.10
-  resolution: "@nanopub/sign@npm:0.1.10"
-  checksum: 10c0/af5c5cd06938eb15e1d78f9b51b86e8c4a30841065a92c525846f5bc04226ad7ea08918c54f70ac5bd0b466eadbcee70e811a3fb4522d8b013982bb9996323bf
+  checksum: 10c0/8e22bddc3e0757bd7d82019e855df2b1d8caa97dd37d4f1d34927fbfccfcc9fdbf318022f79c718b770b85e82a73e942412c3c3f29e97ba168632958db2f2603
   languageName: node
   linkType: hard
 
@@ -10028,7 +10020,7 @@ __metadata:
     "@docusaurus/preset-classic": "npm:^3.10.0"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
     "@mdx-js/react": "npm:^3.0.1"
-    "@nanopub/nanopub-js": "npm:^0.1.0"
+    "@nanopub/nanopub-js": "npm:^0.1.1"
     "@types/node": "npm:^22.5.5"
     clsx: "npm:^2.1.1"
     docusaurus-plugin-image-zoom: "npm:^2.0.0"
@@ -11643,12 +11635,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rdf-canonize@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "rdf-canonize@npm:4.0.1"
+"rdf-canonize@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "rdf-canonize@npm:5.0.0"
   dependencies:
     setimmediate: "npm:^1.0.5"
-  checksum: 10c0/8f6040847c5731817cc5ad95ca16caa588fba76c94ee3b24f282c9a3054f36226560bcb33bed8a173903960af1b9937e21db6e0dc2e90caa749682fff8228250
+  checksum: 10c0/3d2811b43fe0890d15bffbbb74e62b4f890e649cd54ac989cbd11b334662012b852bdc96eda41bf620c125256965760208826895be1bbacc9f268c724f10303e
   languageName: node
   linkType: hard
 
