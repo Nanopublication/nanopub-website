@@ -3543,7 +3543,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:^3.0.0, @mdx-js/react@npm:^3.0.1":
+"@mdx-js/react@npm:^3.0.0, @mdx-js/react@npm:^3.1.1":
   version: 3.1.1
   resolution: "@mdx-js/react@npm:3.1.1"
   dependencies:
@@ -10019,7 +10019,7 @@ __metadata:
     "@docusaurus/module-type-aliases": "npm:^3.10.0"
     "@docusaurus/preset-classic": "npm:^3.10.0"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
-    "@mdx-js/react": "npm:^3.0.1"
+    "@mdx-js/react": "npm:^3.1.1"
     "@nanopub/nanopub-js": "npm:^0.1.1"
     "@types/node": "npm:^22.5.5"
     clsx: "npm:^2.1.1"
