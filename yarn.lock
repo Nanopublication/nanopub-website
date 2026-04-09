@@ -2571,7 +2571,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:3.10.0":
+"@docusaurus/plugin-content-docs@npm:3.10.0, @docusaurus/plugin-content-docs@npm:^3.10.0":
   version: 3.10.0
   resolution: "@docusaurus/plugin-content-docs@npm:3.10.0"
   dependencies:
@@ -2789,7 +2789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-classic@npm:3.10.0":
+"@docusaurus/theme-classic@npm:3.10.0, @docusaurus/theme-classic@npm:^3.10.0":
   version: 3.10.0
   resolution: "@docusaurus/theme-classic@npm:3.10.0"
   dependencies:
@@ -2826,7 +2826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-common@npm:3.10.0":
+"@docusaurus/theme-common@npm:3.10.0, @docusaurus/theme-common@npm:^3.10.0":
   version: 3.10.0
   resolution: "@docusaurus/theme-common@npm:3.10.0"
   dependencies:
@@ -4547,6 +4547,15 @@ __metadata:
   dependencies:
     csstype: "npm:^3.2.2"
   checksum: 10c0/a02aa87853fa6ef82353dd58803f18744e367e05760845be9a35f9771031fb81077ef05fb5ef3e9d7bbd91d3f8394b47106a18a833ddfed81e6fbf0be55a3544
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^19.2.14":
+  version: 19.2.14
+  resolution: "@types/react@npm:19.2.14"
+  dependencies:
+    csstype: "npm:^3.2.2"
+  checksum: 10c0/7d25bf41b57719452d86d2ac0570b659210402707313a36ee612666bf11275a1c69824f8c3ee1fdca077ccfe15452f6da8f1224529b917050eb2d861e52b59b7
   languageName: node
   linkType: hard
 
@@ -10017,11 +10026,15 @@ __metadata:
   dependencies:
     "@docusaurus/core": "npm:^3.10.0"
     "@docusaurus/module-type-aliases": "npm:^3.10.0"
+    "@docusaurus/plugin-content-docs": "npm:^3.10.0"
     "@docusaurus/preset-classic": "npm:^3.10.0"
+    "@docusaurus/theme-classic": "npm:^3.10.0"
+    "@docusaurus/theme-common": "npm:^3.10.0"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
     "@mdx-js/react": "npm:^3.1.1"
     "@nanopub/nanopub-js": "npm:^0.1.1"
     "@types/node": "npm:^22.19.17"
+    "@types/react": "npm:^19.2.14"
     clsx: "npm:^2.1.1"
     docusaurus-plugin-image-zoom: "npm:^2.0.0"
     dompurify: "npm:^3.3.3"
