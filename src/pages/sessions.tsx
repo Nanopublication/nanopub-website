@@ -114,15 +114,25 @@ export default function SessionsPage() {
   function formatSessionDate(iso?: string) {
     if (!iso) return;
     const date = new Date(iso);
-    return date.toLocaleString("en-GB", {
-      timeZone: "Europe/Amsterdam",
+    const offsetMatch = iso.match(/([+-])(\d{2}):\d{2}$/);
+    let timeZone = "Etc/GMT";
+    let tzLabel = "UTC";
+    if (offsetMatch) {
+      const hours = parseInt(offsetMatch[2]);
+      const sign = offsetMatch[1] === "+" ? "-" : "+";
+      timeZone = hours === 0 ? "Etc/GMT" : `Etc/GMT${sign}${hours}`;
+      const offsetHours = offsetMatch[1] === "+" ? hours : -hours;
+      tzLabel = offsetHours === 1 ? "CET" : offsetHours === 2 ? "CEST" : `GMT${offsetMatch[1]}${hours}`;
+    }
+    const formatted = date.toLocaleString("en-GB", {
+      timeZone,
       day: "numeric",
       month: "long",
       year: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-      timeZoneName: "short",
     });
+    return `${formatted} ${tzLabel}`;
   }
 
   return (
