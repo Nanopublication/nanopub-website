@@ -16,8 +16,8 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.9.0",
-    "@docusaurus/preset-classic": "^3.9.0",
+    "@docusaurus/core": "^3.10.0",
+    "@docusaurus/preset-classic": "^3.10.0",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
     "@nanopub/nanopub-js": "^0.1.0",
@@ -29,7 +29,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.0",
+    "@docusaurus/module-type-aliases": "^3.10.0",
     "@types/node": "^22.5.5",
     "remarkable-extlink": "^1.1.1",
     "typescript": "5.9.2"
