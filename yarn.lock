@@ -4479,12 +4479,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.5.5":
-  version: 22.19.8
-  resolution: "@types/node@npm:22.19.8"
+"@types/node@npm:^22.19.17":
+  version: 22.19.17
+  resolution: "@types/node@npm:22.19.17"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/35c3c0916a983dd33ddd8710d868a2678192c2ff3c6677e1d348872b78b9911c929279579c78efac1c9e61958b3f61cc5d3e725aaa41462f16f531d381ff15e6
+  checksum: 10c0/b66c484c0a9f6d88b1ef360b0f487717234ee1a482cb2551ff73d9f3c43a42a777daf4c8a5eee970960728f8fe1f3877d3d8c6ffabcbca74cb401a59db700fa4
   languageName: node
   linkType: hard
 
@@ -10021,7 +10021,7 @@ __metadata:
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
     "@mdx-js/react": "npm:^3.1.1"
     "@nanopub/nanopub-js": "npm:^0.1.1"
-    "@types/node": "npm:^22.5.5"
+    "@types/node": "npm:^22.19.17"
     clsx: "npm:^2.1.1"
     docusaurus-plugin-image-zoom: "npm:^2.0.0"
     dompurify: "npm:^3.3.3"
