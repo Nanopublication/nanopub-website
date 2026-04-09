@@ -115,6 +115,7 @@ export default function SessionsPage() {
     if (!iso) return;
     const date = new Date(iso);
     return date.toLocaleString("en-GB", {
+      timeZone: "Europe/Amsterdam",
       day: "numeric",
       month: "long",
       year: "numeric",
