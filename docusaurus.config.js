@@ -19,8 +19,12 @@ module.exports={
     ],
     "gaGtag": false
   },
+  "markdown": {
+    "hooks": {
+      "onBrokenMarkdownLinks": "log"
+    }
+  },
   "onBrokenLinks": "log",
-  "onBrokenMarkdownLinks": "log",
   "presets": [
     [
       "@docusaurus/preset-classic",
