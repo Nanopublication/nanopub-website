@@ -1,35 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
-import DOMPurify from "dompurify";
 import { NanopubClient } from "@nanopub/nanopub-js";
 import MDSessions from "./previous-sessions.md";
 
-export type NanoSession = {
-  number: number;
-  label: string;
-  iri?: string;
-  nanopub?: string;
-  description?: string;
-  date?: string;
-};
-
-function extractSessionNumber(label: string): number | undefined {
-  const match = label.match(/#\s*(\d+)/);
-  return match ? parseInt(match[1], 10) : undefined;
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "nanopub-item": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement> & { uri?: string },
+        HTMLElement
+      >;
+    }
+  }
 }
 
-function extractSessionDetails(jsonld: any) {
-  const assertion = jsonld.find((e: any) => e["@id"]?.endsWith("/assertion"))?.[
-    "@graph"
-  ]?.[0];
-  if (!assertion) return {};
-  return {
-    label:
-      assertion["http://www.w3.org/2000/01/rdf-schema#label"]?.[0]?.["@value"],
-    description:
-      assertion["http://purl.org/dc/terms/description"]?.[0]?.["@value"],
-    startDate: assertion["http://schema.org/startDate"]?.[0]?.["@value"],
-  };
+type SessionRow = { number: number; np: string; label: string };
+
+const MIN_SESSION = 27;
+
+function extractSessionNumber(label: string): number | undefined {
+  const m = label.match(/#\s*(\d+)/);
+  return m ? parseInt(m[1], 10) : undefined;
+}
+
+function slugify(s: string) {
+  return s.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
 function SessionsTOC({
@@ -51,78 +46,71 @@ function SessionsTOC({
   );
 }
 
-export default function SessionsPage() {
-  const [dynamicSessions, setDynamicSessions] = useState<NanoSession[]>([]);
-  const [headings, setHeadings] = useState<{ id: string; label: string }[]>([]);
-  const [loading, setLoading] = useState(true);
+const ITEM_TEMPLATE = `
+<template>
+  <h3 data-bind="label"></h3>
+  <p><em data-bind="startDate" data-format="datetime"></em></p>
+  <div data-bind-html="description"></div>
+</template>
+`;
 
-  const MIN_SESSION = 27; // start of nanopub based sessions
+export default function SessionsPage() {
+  const [sessions, setSessions] = useState<SessionRow[]>([]);
+  const [headings, setHeadings] = useState<{ id: string; label: string }[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    async function loadSessions() {
-      const client = new NanopubClient();
-      const results: NanoSession[] = [];
-
-      for await (const row of client.runQueryTemplate(
-        "RAtZM16vOCcoQ_W_nDS3lKwp2oOIZc515ZS2fz4X-IG2g/get-sub-resources",
-        { super_resource: "https://w3id.org/spaces/nanopub/nanosessions" }
-      )) {
-        const label = row.resource_label;
-        const iri = row.resource;
-        const npIri = row.np;
-        if (!label || !iri || !npIri) continue;
-
-        const number = extractSessionNumber(label);
-        if (!number || number < MIN_SESSION) continue;
-
-        const nanopub = await client.fetchNanopub(npIri, "jsonld");
-        const details = extractSessionDetails(nanopub);
-
-        results.push({
-          number,
-          label: details.label ?? label,
-          iri,
-          nanopub: npIri,
-          description: details.description,
-          date: details.startDate,
-        });
-      }
-
-      setDynamicSessions(results.sort((a, b) => b.number - a.number));
-      setLoading(false);
-    }
-
-    loadSessions();
+    // Dynamic: the module calls customElements.define at load time, which throws during SSR.
+    import("@nanopub/nanopub-elements");
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const h3s = Array.from(document.querySelectorAll("h3"));
-      const seen = new Set<string>();
-      const allHeadings = h3s
-        .map((h) => ({ id: h.id, label: h.textContent || "" }))
-        .filter((h) => {
-          if (seen.has(h.id)) return false;
-          seen.add(h.id);
-          return true;
-        });
-      setHeadings(allHeadings);
-    }, 50);
-    return () => clearTimeout(timer);
-  }, [dynamicSessions]);
+    let cancelled = false;
+    (async () => {
+      const client = new NanopubClient();
+      const rows: SessionRow[] = [];
+      for await (const row of client.runQueryTemplate(
+        "RAtZM16vOCcoQ_W_nDS3lKwp2oOIZc515ZS2fz4X-IG2g/get-sub-resources",
+        { super_resource: "https://w3id.org/spaces/nanopub/nanosessions" },
+      )) {
+        const label = row.resource_label;
+        const np = row.np;
+        if (!label || !np) continue;
+        const number = extractSessionNumber(label);
+        if (!number || number < MIN_SESSION) continue;
+        rows.push({ number, np, label });
+      }
+      if (cancelled) return;
+      rows.sort((a, b) => b.number - a.number);
+      setSessions(rows);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-  function formatSessionDate(iso?: string) {
-    if (!iso) return;
-    const date = new Date(iso);
-    return date.toLocaleString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZoneName: "short",
-    });
-  }
+  useEffect(() => {
+    const root = sectionRef.current;
+    if (!root) return;
+    const update = () => {
+      const h3s = Array.from(root.querySelectorAll("h3"));
+      const seen = new Set<string>();
+      const all: { id: string; label: string }[] = [];
+      for (const h of h3s) {
+        const label = h.textContent?.trim() ?? "";
+        if (!label) continue;
+        if (!h.id) h.id = slugify(label);
+        if (seen.has(h.id)) continue;
+        seen.add(h.id);
+        all.push({ id: h.id, label });
+      }
+      setHeadings(all);
+    };
+    const observer = new MutationObserver(update);
+    observer.observe(root, { childList: true, subtree: true, characterData: true });
+    update();
+    return () => observer.disconnect();
+  }, [sessions]);
 
   return (
     <Layout title="Nano Sessions" description="All nanopublication sessions">
@@ -199,34 +187,18 @@ export default function SessionsPage() {
               by hitting <em>Ask to join group</em> and be notified.
             </li>
           </ul>
-          {loading ? (
-            <p>Loading Nano Sessions...</p>
-          ) : (
-            <>
-              <section>
-                {dynamicSessions.map((s) => (
-                  <div key={s.number}>
-                    <h3 id={`nano-session-${s.number}`}>{s.label}</h3>
-                    {s.date && (
-                      <p>
-                        <em>{formatSessionDate(s.date)}</em>
-                      </p>
-                    )}
-                    {s.description && (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: DOMPurify.sanitize(s.description),
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </section>
-              <section>
-                <MDSessions />
-              </section>
-            </>
-          )}
+          <section ref={sectionRef}>
+            {sessions.map((s) => (
+              <nanopub-item
+                key={s.np}
+                uri={s.np}
+                dangerouslySetInnerHTML={{ __html: ITEM_TEMPLATE }}
+              />
+            ))}
+          </section>
+          <section>
+            <MDSessions />
+          </section>
         </main>
 
         <aside style={{ width: "220px" }}>
