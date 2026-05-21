@@ -153,12 +153,12 @@ export default function SessionsPage() {
             <li>
               All sessions are in this{" "}
               <a
-                href="https://vu-live.zoom.us/j/91057846609?pwd=ON5eF2Ovs1fY8KQUCnEvSM2Eltfod1.1"
+                href="https://meet.jit.si/nanosession"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {" "}
-                Zoom channel
+                Jitsi channel
               </a>
               . Anyone can join without registration.
             </li>
