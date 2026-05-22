@@ -14,9 +14,17 @@ declare global {
   }
 }
 
-type SessionRow = { number: number; np: string; label: string };
+type SessionRow = {
+  number: number;
+  np: string;
+  label: string;
+  resource: string;
+  subEvents: { np: string; label: string }[];
+};
 
 const MIN_SESSION = 27;
+const QUERY_TEMPLATE = "RAGxWuFSWFeXyoCZiJpaVMwH-_9-fLX3GFPb5XI-KHIok/get-sub-resources";
+const SUPER_RESOURCE = "https://w3id.org/spaces/nanopub/nanosessions";
 
 function extractSessionNumber(label: string): number | undefined {
   const m = label.match(/#\s*(\d+)/);
@@ -54,6 +62,14 @@ const ITEM_TEMPLATE = `
 </template>
 `;
 
+const SUB_ITEM_TEMPLATE = `
+<template>
+  <h4 data-bind="label"></h4>
+  <p><em data-bind="startDate" data-format="datetime"></em></p>
+  <div data-bind-html="description"></div>
+</template>
+`;
+
 export default function SessionsPage() {
   const [sessions, setSessions] = useState<SessionRow[]>([]);
   const [headings, setHeadings] = useState<{ id: string; label: string }[]>([]);
@@ -68,21 +84,45 @@ export default function SessionsPage() {
     let cancelled = false;
     (async () => {
       const client = new NanopubClient();
-      const rows: SessionRow[] = [];
-      for await (const row of client.runQueryTemplate(
-        "RAtZM16vOCcoQ_W_nDS3lKwp2oOIZc515ZS2fz4X-IG2g/get-sub-resources",
-        { super_resource: "https://w3id.org/spaces/nanopub/nanosessions" },
-      )) {
+
+      type RawRow = { number: number; np: string; label: string; resource: string };
+      const rawRows: RawRow[] = [];
+      for await (const row of client.runQueryTemplate(QUERY_TEMPLATE, {
+        super_resource: SUPER_RESOURCE,
+        "api-version": "latest",
+      })) {
         const label = row.resource_label;
         const np = row.np;
-        if (!label || !np) continue;
+        const resource = row.resource;
+        if (!label || !np || !resource) continue;
         const number = extractSessionNumber(label);
         if (!number || number < MIN_SESSION) continue;
-        rows.push({ number, np, label });
+        rawRows.push({ number, np, label, resource });
       }
       if (cancelled) return;
-      rows.sort((a, b) => b.number - a.number);
-      setSessions(rows);
+
+      // fetch sub-resources of each session.
+      const withSubs: SessionRow[] = await Promise.all(
+        rawRows.map(async (r) => {
+          const subEvents: { np: string; label: string }[] = [];
+          try {
+            for await (const sub of client.runQueryTemplate(QUERY_TEMPLATE, {
+              super_resource: r.resource,
+              "api-version": "latest",
+            })) {
+              if (!sub.resource || !sub.np || !sub.resource_label) continue;
+              subEvents.push({ np: sub.np, label: sub.resource_label });
+            }
+          } catch {
+            // Treat sub-resource fetch failures as "no sub-events".
+          }
+          return { ...r, subEvents };
+        }),
+      );
+      if (cancelled) return;
+
+      withSubs.sort((a, b) => b.number - a.number);
+      setSessions(withSubs);
     })();
     return () => {
       cancelled = true;
@@ -189,11 +229,28 @@ export default function SessionsPage() {
           </ul>
           <section ref={sectionRef}>
             {sessions.map((s) => (
-              <nanopub-item
-                key={s.np}
-                uri={s.np}
-                dangerouslySetInnerHTML={{ __html: ITEM_TEMPLATE }}
-              />
+              <div key={s.np}>
+                <nanopub-item
+                  uri={s.np}
+                  dangerouslySetInnerHTML={{ __html: ITEM_TEMPLATE }}
+                />
+                {s.subEvents.length > 0 && (
+                  <details style={{ marginBottom: "1rem" }}>
+                    <summary style={{ cursor: "pointer" }}>
+                      Sub-events ({s.subEvents.length})
+                    </summary>
+                    <div style={{ marginTop: "0.5rem" }}>
+                      {s.subEvents.map((sub) => (
+                        <nanopub-item
+                          key={sub.np}
+                          uri={sub.np}
+                          dangerouslySetInnerHTML={{ __html: SUB_ITEM_TEMPLATE }}
+                        />
+                      ))}
+                    </div>
+                  </details>
+                )}
+              </div>
             ))}
           </section>
           <section>
