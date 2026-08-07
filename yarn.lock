@@ -3315,12 +3315,12 @@ __metadata:
   linkType: hard
 
 "@nanopub/nanopub-elements@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@nanopub/nanopub-elements@npm:0.1.0"
+  version: 0.1.1
+  resolution: "@nanopub/nanopub-elements@npm:0.1.1"
   dependencies:
     "@nanopub/nanopub-js": "npm:^0.1.1"
     dompurify: "npm:^3.3.1"
-  checksum: 10c0/2feed8cdff06dcf253ad5a1981315fb6f4f662c9855a62bec15133f460a2417ccfde6e52d2942d82a458c636570beb85fc39e9e3469497c29f03f378c7cf65b6
+  checksum: 10c0/08c805ace559085f8a0d4ed52680dd8d8c5e9724115bf23663ad3c0c1598a6f5d7de3be14f1cf724bc0cd97142b8e2d316aa7cd032255a8715d45df6763e67dc
   languageName: node
   linkType: hard
 
