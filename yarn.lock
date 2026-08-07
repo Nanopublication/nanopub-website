@@ -3314,13 +3314,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nanopub/nanopub-elements@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@nanopub/nanopub-elements@npm:0.1.0"
+"@nanopub/nanopub-elements@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@nanopub/nanopub-elements@npm:0.3.0"
   dependencies:
-    "@nanopub/nanopub-js": "npm:^0.1.1"
+    "@nanopub/nanopub-js": "npm:^0.1.2"
     dompurify: "npm:^3.3.1"
-  checksum: 10c0/2feed8cdff06dcf253ad5a1981315fb6f4f662c9855a62bec15133f460a2417ccfde6e52d2942d82a458c636570beb85fc39e9e3469497c29f03f378c7cf65b6
+  checksum: 10c0/276be79b8ce5a5cb900efe598cfe48c8d35743ced88a1ffe5f35cba0c1090267149a25c0ee93bd62394984b342a02e1236759ab538c8033f33abef72a8ee5980
   languageName: node
   linkType: hard
 
@@ -3333,6 +3333,19 @@ __metadata:
     rdf-canonize: "npm:^5.0.0"
     rdf-js: "npm:^4.0.2"
   checksum: 10c0/8e22bddc3e0757bd7d82019e855df2b1d8caa97dd37d4f1d34927fbfccfcc9fdbf318022f79c718b770b85e82a73e942412c3c3f29e97ba168632958db2f2603
+  languageName: node
+  linkType: hard
+
+"@nanopub/nanopub-js@npm:^0.1.2":
+  version: 0.1.3
+  resolution: "@nanopub/nanopub-js@npm:0.1.3"
+  dependencies:
+    "@rdfjs/data-model": "npm:^2.1.1"
+    "@rdfjs/types": "npm:^2.0.1"
+    n3: "npm:^1.26.0"
+    rdf-canonize: "npm:^5.0.0"
+    rdf-js: "npm:^4.0.2"
+  checksum: 10c0/118cb7028cc4a096c2e6a3a5b65f55df81ac62d4b91ef59b5d33eff79551d6ea66160579732c39c7dc7fdd0ec77485cfa8db55e7e7c4ebd3db890687296b12e6
   languageName: node
   linkType: hard
 
@@ -3749,7 +3762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rdfjs/types@npm:*":
+"@rdfjs/types@npm:*, @rdfjs/types@npm:^2.0.1":
   version: 2.0.1
   resolution: "@rdfjs/types@npm:2.0.1"
   dependencies:
@@ -9741,7 +9754,7 @@ __metadata:
     "@docusaurus/theme-common": "npm:^3.10.0"
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
     "@mdx-js/react": "npm:^3.1.1"
-    "@nanopub/nanopub-elements": "npm:^0.1.0"
+    "@nanopub/nanopub-elements": "npm:^0.3.0"
     "@nanopub/nanopub-js": "npm:^0.1.1"
     "@types/node": "npm:^25.5.2"
     "@types/react": "npm:^19.2.14"
