@@ -26,6 +26,12 @@ const MIN_SESSION = 27;
 const QUERY_TEMPLATE = "RAGxWuFSWFeXyoCZiJpaVMwH-_9-fLX3GFPb5XI-KHIok/get-sub-resources";
 const SUPER_RESOURCE = "https://w3id.org/spaces/nanopub/nanosessions";
 
+const MAX_SESSIONS = 15;
+// The markdown sessions are revealed once the nanopublished ones have rendered.
+// If a fetch fails they never will, so show them anyway rather than stranding
+// the whole list behind a request that is not coming back.
+const REVEAL_FALLBACK_MS = 6000;
+
 function extractSessionNumber(label: string): number | undefined {
   const m = label.match(/#\s*(\d+)/);
   return m ? parseInt(m[1], 10) : undefined;
@@ -77,11 +83,25 @@ const SUB_ITEM_TEMPLATE = {
 export default function SessionsPage() {
   const [sessions, setSessions] = useState<SessionRow[]>([]);
   const [headings, setHeadings] = useState<{ id: string; label: string }[]>([]);
+  const [staticShown, setStaticShown] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const dynamicRef = useRef<HTMLDivElement>(null);
+  const staticRef = useRef<HTMLDivElement>(null);
+  // Mirrors staticShown so the MutationObserver below reads it synchronously
+  // instead of through a render-lagged closure.
+  const staticShownRef = useRef(false);
 
   useEffect(() => {
     // Dynamic: the module calls customElements.define at load time, which throws during SSR.
     import("@nanopub/nanopub-elements");
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      staticShownRef.current = true;
+      setStaticShown(true);
+    }, REVEAL_FALLBACK_MS);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -105,9 +125,17 @@ export default function SessionsPage() {
       }
       if (cancelled) return;
 
-      // fetch sub-resources of each session.
-      const withSubs: SessionRow[] = await Promise.all(
-        rawRows.map(async (r) => {
+      rawRows.sort((a, b) => b.number - a.number);
+      const shown = rawRows.slice(0, MAX_SESSIONS);
+      // Render the sessions right away so each <nanopub-item> can start fetching
+      // its own content; waiting for the sub-resource queries below first would
+      // serialise the two rounds of requests and roughly double the load time.
+      setSessions(shown.map((r) => ({ ...r, subEvents: [] })));
+
+      // Sub-events sit behind a collapsed <details>, so fold them in as they
+      // arrive instead of blocking the initial render on all of them.
+      await Promise.all(
+        shown.map(async (r) => {
           const subEvents: { np: string; label: string }[] = [];
           try {
             for await (const sub of client.runQueryTemplate(QUERY_TEMPLATE, {
@@ -120,13 +148,12 @@ export default function SessionsPage() {
           } catch {
             // Treat sub-resource fetch failures as "no sub-events".
           }
-          return { ...r, subEvents };
+          if (cancelled || !subEvents.length) return;
+          setSessions((prev) =>
+            prev.map((s) => (s.np === r.np ? { ...s, subEvents } : s)),
+          );
         }),
       );
-      if (cancelled) return;
-
-      withSubs.sort((a, b) => b.number - a.number);
-      setSessions(withSubs);
     })();
     return () => {
       cancelled = true;
@@ -137,10 +164,45 @@ export default function SessionsPage() {
     const root = sectionRef.current;
     if (!root) return;
     const update = () => {
+      const staticRoot = staticRef.current;
+      const dynamicRoot = dynamicRef.current;
+
+      // A <nanopub-item> holds nothing but its inert <template> until its fetch
+      // resolves, so a rendered heading is what marks it as done. Only once
+      // every one of them is done do the markdown sessions join the list.
+      if (!staticShownRef.current && dynamicRoot && sessions.length > 0) {
+        const items = Array.from(
+          dynamicRoot.querySelectorAll(":scope > div > nanopub-item"),
+        );
+        if (
+          items.length === sessions.length &&
+          items.every((el) => el.querySelector("h3"))
+        ) {
+          staticShownRef.current = true;
+          setStaticShown(true);
+        }
+      }
+
+      // The markdown sessions top the list up to MAX_SESSIONS. They render as a
+      // flat run of siblings, so each <h3> opens an entry that owns every node
+      // up to the next one; hide whole entries past the budget.
+      if (staticRoot) {
+        let budget = Math.max(0, MAX_SESSIONS - sessions.length);
+        let keep = false;
+        for (const node of Array.from(staticRoot.children) as HTMLElement[]) {
+          if (node.tagName === "H3") keep = budget-- > 0;
+          node.style.display = keep ? "" : "none";
+        }
+      }
+
       const h3s = Array.from(root.querySelectorAll("h3"));
       const seen = new Set<string>();
       const all: { id: string; label: string }[] = [];
       for (const h of h3s) {
+        // Skip anything trimmed above, and the whole markdown block while it is
+        // still waiting on the dynamic sessions.
+        if (h.style.display === "none") continue;
+        if (!staticShownRef.current && staticRoot?.contains(h)) continue;
         const label = h.textContent?.trim() ?? "";
         if (!label) continue;
         if (!h.id) h.id = slugify(label);
@@ -232,33 +294,43 @@ export default function SessionsPage() {
             </li>
           </ul>
           <section ref={sectionRef}>
-            {sessions.map((s) => (
-              <div key={s.np}>
-                <nanopub-item
-                  uri={s.np}
-                  dangerouslySetInnerHTML={ITEM_TEMPLATE}
-                />
-                {s.subEvents.length > 0 && (
-                  <details style={{ marginBottom: "1rem" }}>
-                    <summary style={{ cursor: "pointer" }}>
-                      Sub-events ({s.subEvents.length})
-                    </summary>
-                    <div style={{ marginTop: "0.5rem" }}>
-                      {s.subEvents.map((sub) => (
-                        <nanopub-item
-                          key={sub.np}
-                          uri={sub.np}
-                          dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
-                        />
-                      ))}
-                    </div>
-                  </details>
-                )}
-              </div>
-            ))}
-          </section>
-          <section>
-            <MDSessions />
+            <div ref={dynamicRef}>
+              {sessions.map((s) => (
+                <div key={s.np}>
+                  <nanopub-item
+                    uri={s.np}
+                    dangerouslySetInnerHTML={ITEM_TEMPLATE}
+                  />
+                  {s.subEvents.length > 0 && (
+                    <details style={{ marginBottom: "1rem" }}>
+                      <summary style={{ cursor: "pointer" }}>
+                        Sub-events ({s.subEvents.length})
+                      </summary>
+                      <div style={{ marginTop: "0.5rem" }}>
+                        {s.subEvents.map((sub) => (
+                          <nanopub-item
+                            key={sub.np}
+                            uri={sub.np}
+                            dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
+                          />
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                </div>
+              ))}
+            </div>
+            {/* Sessions up to #26 predate the nanopublished ones and live in
+                markdown. The query above only yields #27 upwards, so appending
+                them here continues the same descending list without a visible
+                seam. Kept mounted but hidden rather than conditionally rendered,
+                so the effect above can trim it before it is ever on screen. */}
+            <div
+              ref={staticRef}
+              style={{ display: staticShown ? undefined : "none" }}
+            >
+              <MDSessions />
+            </div>
           </section>
         </main>
 
