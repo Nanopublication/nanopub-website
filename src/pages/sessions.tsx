@@ -32,6 +32,53 @@ const MAX_SESSIONS = 15;
 // the whole list behind a request that is not coming back.
 const REVEAL_FALLBACK_MS = 6000;
 
+// Only the session list is cached. The query API sends no cache headers, so the
+// browser refetches it on every visit and on every SPA navigation back to this
+// page, even though the list changes just once a month.
+const CACHE_KEY = "nanopub-sessions:v1";
+
+type CachedRow = { number: number; np: string; label: string; resource: string };
+
+function readCachedSessions(): CachedRow[] | null {
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(CACHE_KEY) ?? "null");
+    if (!Array.isArray(parsed)) return null;
+    const rows = parsed.filter(
+      (r): r is CachedRow =>
+        !!r &&
+        typeof r.number === "number" &&
+        typeof r.np === "string" &&
+        typeof r.label === "string" &&
+        typeof r.resource === "string",
+    );
+    return rows.length ? rows : null;
+  } catch {
+    // Storage disabled, or a stale entry from an older shape: treat as a miss.
+    return null;
+  }
+}
+
+function writeCachedSessions(rows: CachedRow[]) {
+  try {
+    window.localStorage.setItem(CACHE_KEY, JSON.stringify(rows));
+  } catch {
+    // Quota or disabled storage. Caching is an optimisation, not a requirement.
+  }
+}
+
+// Nanopub URIs are trusty URIs, i.e. content hashes, so any change to a session
+// yields a different np. Comparing the np sequence therefore catches every
+// change to the list.
+function sameSessions(a: CachedRow[], b: CachedRow[]) {
+  return a.length === b.length && a.every((r, i) => r.np === b[i].np);
+}
+
+const EMPTY_SET: ReadonlySet<string> = new Set<string>();
+
+function sameSet(a: ReadonlySet<string>, b: ReadonlySet<string>) {
+  return a.size === b.size && [...a].every((v) => b.has(v));
+}
+
 function extractSessionNumber(label: string): number | undefined {
   const m = label.match(/#\s*(\d+)/);
   return m ? parseInt(m[1], 10) : undefined;
@@ -84,6 +131,9 @@ export default function SessionsPage() {
   const [sessions, setSessions] = useState<SessionRow[]>([]);
   const [headings, setHeadings] = useState<{ id: string; label: string }[]>([]);
   const [staticShown, setStaticShown] = useState(false);
+  // np URIs whose <nanopub-item> has rendered its own content. Until an item is
+  // in here it shows the cached title as a placeholder instead of nothing.
+  const [rendered, setRendered] = useState<ReadonlySet<string>>(EMPTY_SET);
   const sectionRef = useRef<HTMLElement>(null);
   const dynamicRef = useRef<HTMLDivElement>(null);
   const staticRef = useRef<HTMLDivElement>(null);
@@ -106,6 +156,19 @@ export default function SessionsPage() {
 
   useEffect(() => {
     let cancelled = false;
+
+    // Paint last visit's list straight away; the query below still runs and
+    // corrects it. The cache only decides whether the user waits for it.
+    const cached = readCachedSessions();
+    if (cached) {
+      setSessions(cached.map((r) => ({ ...r, subEvents: [] })));
+      // The cached titles are already a complete list, so there is nothing left
+      // to wait for: holding the markdown back would blank out two thirds of
+      // the page on every revisit, which is the thing the cache exists to stop.
+      staticShownRef.current = true;
+      setStaticShown(true);
+    }
+
     (async () => {
       const client = new NanopubClient();
 
@@ -127,10 +190,16 @@ export default function SessionsPage() {
 
       rawRows.sort((a, b) => b.number - a.number);
       const shown = rawRows.slice(0, MAX_SESSIONS);
+      writeCachedSessions(shown);
+
       // Render the sessions right away so each <nanopub-item> can start fetching
       // its own content; waiting for the sub-resource queries below first would
       // serialise the two rounds of requests and roughly double the load time.
-      setSessions(shown.map((r) => ({ ...r, subEvents: [] })));
+      // When the cache was already correct, leave the rendered items alone
+      // rather than handing React a fresh array for an unchanged list.
+      if (!cached || !sameSessions(cached, shown)) {
+        setSessions(shown.map((r) => ({ ...r, subEvents: [] })));
+      }
 
       // Sub-events sit behind a collapsed <details>, so fold them in as they
       // arrive instead of blocking the initial render on all of them.
@@ -168,19 +237,31 @@ export default function SessionsPage() {
       const dynamicRoot = dynamicRef.current;
 
       // A <nanopub-item> holds nothing but its inert <template> until its fetch
-      // resolves, so a rendered heading is what marks it as done. Only once
-      // every one of them is done do the markdown sessions join the list.
-      if (!staticShownRef.current && dynamicRoot && sessions.length > 0) {
-        const items = Array.from(
-          dynamicRoot.querySelectorAll(":scope > div > nanopub-item"),
-        );
-        if (
-          items.length === sessions.length &&
-          items.every((el) => el.querySelector("h3"))
-        ) {
-          staticShownRef.current = true;
-          setStaticShown(true);
-        }
+      // resolves, so a rendered heading is what marks it as done. The
+      // placeholder title sits outside the element, so it never counts here.
+      const items = dynamicRoot
+        ? Array.from(
+            dynamicRoot.querySelectorAll(":scope > div > nanopub-item"),
+          )
+        : [];
+      const done = new Set(
+        items
+          .filter((el) => el.querySelector("h3"))
+          .map((el) => el.getAttribute("uri") ?? ""),
+      );
+      // Returning the previous set when nothing changed bails out of the
+      // re-render this observer would otherwise trigger on every mutation.
+      setRendered((prev) => (sameSet(prev, done) ? prev : done));
+
+      // Only once every item is done do the markdown sessions join the list.
+      if (
+        !staticShownRef.current &&
+        sessions.length > 0 &&
+        items.length === sessions.length &&
+        done.size === items.length
+      ) {
+        staticShownRef.current = true;
+        setStaticShown(true);
       }
 
       // The markdown sessions top the list up to MAX_SESSIONS. They render as a
@@ -297,6 +378,11 @@ export default function SessionsPage() {
             <div ref={dynamicRef}>
               {sessions.map((s) => (
                 <div key={s.np}>
+                  {/* Stands in until the element has fetched its own content,
+                      so a cached list stays on screen while it revalidates
+                      instead of blanking out. The element renders its real
+                      heading inside itself, and this one then unmounts. */}
+                  {!rendered.has(s.np) && <h3>{s.label}</h3>}
                   <nanopub-item
                     uri={s.np}
                     dangerouslySetInnerHTML={ITEM_TEMPLATE}
