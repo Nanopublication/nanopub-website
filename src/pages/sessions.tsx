@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 import { NanopubClient } from "@nanopub/nanopub-js";
 import MDSessions from "./previous-sessions.md";
 
-declare global {
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
       "nanopub-item": React.DetailedHTMLProps<
@@ -54,21 +54,25 @@ function SessionsTOC({
   );
 }
 
-const ITEM_TEMPLATE = `
+const ITEM_TEMPLATE = {
+  __html: `
 <template>
   <h3 data-bind="label"></h3>
   <p><em data-bind="startDate" data-format="datetime"></em></p>
   <div data-bind-html="description"></div>
 </template>
-`;
+`,
+};
 
-const SUB_ITEM_TEMPLATE = `
+const SUB_ITEM_TEMPLATE = {
+  __html: `
 <template>
   <h4 data-bind="label"></h4>
   <p><em data-bind="startDate" data-format="datetime"></em></p>
   <div data-bind-html="description"></div>
 </template>
-`;
+`,
+};
 
 export default function SessionsPage() {
   const [sessions, setSessions] = useState<SessionRow[]>([]);
@@ -232,7 +236,7 @@ export default function SessionsPage() {
               <div key={s.np}>
                 <nanopub-item
                   uri={s.np}
-                  dangerouslySetInnerHTML={{ __html: ITEM_TEMPLATE }}
+                  dangerouslySetInnerHTML={ITEM_TEMPLATE}
                 />
                 {s.subEvents.length > 0 && (
                   <details style={{ marginBottom: "1rem" }}>
@@ -244,7 +248,7 @@ export default function SessionsPage() {
                         <nanopub-item
                           key={sub.np}
                           uri={sub.np}
-                          dangerouslySetInnerHTML={{ __html: SUB_ITEM_TEMPLATE }}
+                          dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
                         />
                       ))}
                     </div>
