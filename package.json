@@ -23,7 +23,7 @@
     "@docusaurus/theme-common": "^3.10.0",
     "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.1.1",
-    "@nanopub/nanopub-elements": "^0.3.0",
+    "@nanopub/nanopub-elements": "^0.4.0",
     "@nanopub/nanopub-js": "^0.1.1",
     "@types/react": "^19.2.14",
     "clsx": "^2.1.1",
