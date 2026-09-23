@@ -3339,8 +3339,8 @@ __metadata:
   linkType: hard
 
 "@nanopub/nanopub-js@npm:^0.3.0":
-  version: 0.3.1
-  resolution: "@nanopub/nanopub-js@npm:0.3.1"
+  version: 0.3.2
+  resolution: "@nanopub/nanopub-js@npm:0.3.2"
   dependencies:
     "@rdfjs/data-model": "npm:^2.1.1"
     "@rdfjs/types": "npm:^2.0.1"
@@ -3348,7 +3348,7 @@ __metadata:
     n3: "npm:^2.0.0"
     rdf-canonize: "npm:^5.0.0"
     rdf-js: "npm:^4.0.2"
-  checksum: 10c0/47bfc1c86ea51e14be571843265cd493bf8cfac77f54626ec18a3f9b325e9e9349a817e39ebd6a57075f02f3a1382cb0a6e9aecaef6fcf1c3b3689f567f77338
+  checksum: 10c0/ed261e14ffb491fc353647bef690317da0d562b609003ae444481b374682b3e98c3681dc7f659a9bd50c546cfdb3c9276ff76dd36b6d5d5fb6dbc62c8f7064f6
   languageName: node
   linkType: hard
 
