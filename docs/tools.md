@@ -5,6 +5,14 @@ title: Tools
 
 There are a few existing tools to access and publish nanopublications.
 
+## 🤖 AI agents
+
+- [**nanopub-skill**](https://github.com/knowledgepixels/nanopub-skill) is an Agent Skill that lets AI coding agents
+  work with nanopublications in natural language: creating, signing, publishing, querying, superseding, and retracting
+  them, as well as authoring templates, resource views, and Spaces. It follows the open
+  [Agent Skills](https://agentskills.io) format, and so works with Claude Code, OpenAI Codex, Gemini CLI, Cursor,
+  GitHub Copilot, and many other agents.
+
 ## 👩‍💻 User interfaces
 
 - [**Nanodash**](https://github.com/knowledgepixels/nanodash) is a nanopublication user interface offering easy-to-use

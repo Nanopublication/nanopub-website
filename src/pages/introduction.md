@@ -18,3 +18,5 @@ As can be seen in this image, a nanopublication has three basic elements:
 3. **Publication Info**: This part contains metadata about the  nanopublication as a whole, such as when and by whom it was created and  the license terms for its reuse.
 
 Nanopublications are implemented in the language RDF and come with an evolving ecosystem of tools and systems. They can be published to a  decentralized server network, for example, and then queried, accessed,  reused, and linked. To find out more, see the [guidelines](/docs), the [examples](/docs/examples), or the [published articles](https://scholar.google.com/scholar?hl=en&q=nanopublications) about nanopublications.
+
+Nanopublications can also be created, published, and queried conversationally with AI coding agents, through the [nanopub Agent Skill](https://github.com/knowledgepixels/nanopub-skill).
