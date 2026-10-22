@@ -3338,14 +3338,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nanopub/nanopub-js@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@nanopub/nanopub-js@npm:0.5.0"
+"@nanopub/nanopub-js@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@nanopub/nanopub-js@npm:0.6.0"
   dependencies:
     "@rdfjs/types": "npm:^2.0.1"
     "@traqula/parser-sparql-1-1": "npm:^1.2.1"
     n3: "npm:^2.0.0"
-  checksum: 10c0/4a68c167caf3b264dd1fec51778f9b4968e4051d326892f1a5e9c90b07c86dcf14bd23ac1af8f6938c016e5be18d9ec10917f18306c97c3babc903ed1ac0db32
+  checksum: 10c0/4b560fba56a5123b0898a7d50fad54b81237077a630f11df11d11dd574153b8ed36ba294bd2915e393c47e8e445b918c717629f48a52797fcb1c3aae7e696ed1
   languageName: node
   linkType: hard
 
@@ -9959,7 +9959,7 @@ __metadata:
     "@easyops-cn/docusaurus-search-local": "npm:^0.55.1"
     "@mdx-js/react": "npm:^3.1.1"
     "@nanopub/nanopub-elements": "npm:^0.4.0"
-    "@nanopub/nanopub-js": "npm:^0.5.0"
+    "@nanopub/nanopub-js": "npm:^0.6.0"
     "@types/node": "npm:^25.5.2"
     "@types/react": "npm:^19.2.14"
     clsx: "npm:^2.1.1"
