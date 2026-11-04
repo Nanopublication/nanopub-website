@@ -204,7 +204,7 @@ Speakers:
 
 ### Nano Session #4
 
-_16 Mai 2023, 16:00 CEST_
+_16 May 2023, 16:00 CEST_
 
 Speakers:
 

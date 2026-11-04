@@ -13,5 +13,5 @@ This is an incomplete list of nanopublication applications:
 
 - **[RDF Stream Taxonomy (RDF-STaX)](https://w3id.org/stax/dev/nanopubs)**: uses nanopublications to make a *living literature review* of RDF streaming.
 
-* [**fairworkflows**](https://github.com/fair-workflows/fairworkflows): a python library for constructing, modifying and publishing scientific workflows described using semantic technologies.
+- [**fairworkflows**](https://github.com/fair-workflows/fairworkflows): a Python library for constructing, modifying and publishing scientific workflows described using semantic technologies.
 

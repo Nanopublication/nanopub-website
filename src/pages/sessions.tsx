@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import { NanopubClient } from "@nanopub/nanopub-js";
 import MDSessions from "./previous-sessions.md";
+import styles from "./styles.module.css";
 
 declare module "react" {
   namespace JSX {
@@ -301,11 +302,8 @@ export default function SessionsPage() {
 
   return (
     <Layout title="Nano Sessions" description="All nanopublication sessions">
-      <div
-        className="container margin-vert--lg"
-        style={{ display: "flex", gap: "2rem" }}
-      >
-        <main style={{ flex: 1, maxWidth: "800px" }}>
+      <div className={`container margin-vert--lg ${styles.sessionsLayout}`}>
+        <main className={styles.sessionsMain}>
           <h1>Nano Sessions</h1>
           <p>
             The Nano Sessions connect the people who are interested in
@@ -374,7 +372,7 @@ export default function SessionsPage() {
               by hitting <em>Ask to join group</em> and be notified.
             </li>
           </ul>
-          <section ref={sectionRef}>
+          <section ref={sectionRef} className={styles.sessionList}>
             <div ref={dynamicRef}>
               {sessions.map((s) => (
                 <div key={s.np}>
@@ -420,7 +418,7 @@ export default function SessionsPage() {
           </section>
         </main>
 
-        <aside style={{ width: "220px" }}>
+        <aside className={styles.sessionsToc}>
           <SessionsTOC headings={headings} />
         </aside>
       </div>

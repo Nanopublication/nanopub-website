@@ -3,7 +3,7 @@ id: tools
 title: Tools
 ---
 
-There are a few existing tools to access and publish nanopublications.
+These tools let you create, publish, and query nanopublications.
 
 ## 🤖 AI agents
 
@@ -36,7 +36,7 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 ### 🚀 JavaScript
 
-- [**nanopub-js**](https://github.com/nanopublication/nanopub-js): A TypeScript library for creating, signing,
+- [**nanopub-js**](https://github.com/nanopublication/nanopub-js): a TypeScript library for creating, signing,
   publishing, and querying nanopublications.
 
 ### 🪄 Multi-platform
@@ -48,6 +48,6 @@ Libraries in various languages are available to manipulate and publish nanopubli
 
 You can find other tools in the GitHub organization: [Nanopublication](https://github.com/Nanopublication/)
 
-More informations about [Trusty URIs on their website](http://trustyuri.net/).
+More information about [Trusty URIs](https://trustyuri.net/), the content-based identifiers that nanopublications use.
 
 [See this paper](https://arxiv.org/abs/1809.06532) for datasets using nanopublications.

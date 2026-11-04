@@ -12,31 +12,68 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 2.5rem 0;
   }
+}
+
+/* Keeps "Nanopublications" on one line on phones instead of breaking mid-word. */
+.heroTitle {
+  font-size: clamp(2rem, 8vw, 3rem);
 }
 
 .buttons {
   display: flex;
-  align-items:center;
-  justify-content: center;
-  position: relative;
-  color: #fff;
-}
-
-.features {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-/* .featureImage {
-  height: 200px;
-  width: 200px;
-} */
+/* A readable line length for the homepage text. */
+.intro {
+  max-width: 800px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.sessionsLayout {
+  display: flex;
+  gap: 2rem;
+}
+
+.sessionsMain {
+  flex: 1;
+  min-width: 0;
+  max-width: 800px;
+}
+
+.sessionsToc {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .sessionsToc {
+    display: none;
+  }
+}
+
+.sessionList h3 {
+  margin-top: 2.5rem;
+}
+
+/* Session descriptions come from nanopublications either as plain text with line
+   breaks or as HTML. Keep the line breaks of plain text, but lay out HTML as usual. */
+.sessionList [data-bind-html='description'] {
+  white-space: pre-line;
+}
+
+.sessionList [data-bind-html='description'] * {
+  white-space: normal;
+}
 
 .required {
   font-weight: 700;

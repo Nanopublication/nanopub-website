@@ -1,14 +1,11 @@
 module.exports={
   "title": "Nanopublications",
-  "tagline": "FAIR data containers for scientific results, and more",
+  "tagline": "Small, signed, citable units of knowledge, published on a decentralized network",
   "url": "https://nanopub.net/",
   "baseUrl": "/",
   "organizationName": "Nanopublication",
   "projectName": "nanopub-website",
   // trailingSlash: false,
-  "stylesheets": [
-    "https://fonts.googleapis.com/css?family=Roboto:200,300,400,400i,500,600,700",
-  ],
   "favicon": "img/icon.png",
   "customFields": {
     "repoUrl": "https://github.com/Nanopublication/nanopub-website",
@@ -73,9 +70,9 @@ module.exports={
       // textColor: '#091E42',
       // isCloseable: false,
     //},
-    // "prism": {
-    //   "additionalLanguages": ['powershell','dockerfile'],
-    // },
+    prism: {
+      additionalLanguages: ['turtle'],
+    },
     "navbar": {
       "hideOnScroll": false,
       "title": "Nanopublications",
@@ -104,14 +101,46 @@ module.exports={
           "position": "left"
         },
         {
-          "href": "https://github.com/Nanopublication/nanopub-website",
-          // "label": "GitHub",
+          "href": "https://github.com/Nanopublication",
           "position": "right",
-          "className": 'header-github-link'
+          "className": 'header-github-link',
+          "aria-label": "GitHub"
         }
       ]
     },
-    "image": "img/undraw_online.svg",
+    footer: {
+      style: 'light',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            { label: 'Guidelines', to: '/docs/' },
+            { label: 'Examples', to: '/docs/examples' },
+            { label: 'Tools', to: '/docs/tools' },
+            { label: 'Tutorials', to: '/docs/tutorials/' },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            { label: 'Nano Sessions', to: '/sessions' },
+            { label: 'Matrix', href: 'https://matrix.to/#/#nanopub:matrix.org' },
+            { label: 'Mailing list', href: 'https://groups.google.com/g/nanopub-users/' },
+            { label: 'Mastodon', href: 'https://mas.to/@nanopub' },
+          ],
+        },
+        {
+          title: 'Code',
+          items: [
+            { label: 'Nanopublication on GitHub', href: 'https://github.com/Nanopublication' },
+            { label: 'Knowledge Pixels on GitHub', href: 'https://github.com/knowledgepixels' },
+            { label: 'Source of this website', href: 'https://github.com/Nanopublication/nanopub-website' },
+          ],
+        },
+      ],
+      copyright: `© ${new Date().getFullYear()} Nanopublication Association · <a href="/contact">Contact</a>`,
+    },
+    "image": "img/social-card.png",
     zoom: {
       selector: '.markdown > img',
       config: {

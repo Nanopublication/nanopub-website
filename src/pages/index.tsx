@@ -2,63 +2,40 @@ import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import MDXContent from '@theme/MDXContent';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
 import IntroductionMarkdown from './introduction.md';
 
 
 function Home() {
-  const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-
-  // const [state, setState] = React.useState({ });
-  // const stateRef = React.useRef(state);
-  // // Avoid conflict when async calls
-  // const updateState = React.useCallback((update) => {
-  //   stateRef.current = {...stateRef.current, ...update};
-  //   setState(stateRef.current);
-  // }, [setState]);
-
-  // React.useEffect(() => {
-  // }, [])
+  const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={`${siteConfig.title}`} description="Nanopublications">
+    <Layout
+      title={siteConfig.title}
+      description="Nanopublications are small RDF graphs with provenance, identified by content hashes, signed by their creators, and published on a decentralized network.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
+          <h1 className={clsx('hero__title', styles.heroTitle)}>{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link className="button button--secondary button--lg" to="/docs/">
+              Get started
+            </Link>
+            <Link className="button button--outline button--secondary button--lg" to="/docs/examples">
+              Examples
+            </Link>
+          </div>
         </div>
       </header>
-      <main>
-
-        {/* introduction.md */}
-        <section className={styles.features}>
-          <div className="container">
-            <div className="row">
-              <IntroductionMarkdown />
-            </div>
-          </div>
-        </section>
-
-        {/* Get started button */}
-        <section className={styles.features}>
-          <div className="container">
-            <div className={styles.buttons}>
-              <Link
-                className={clsx(
-                  'button button--outline button--primary button--lg',
-                  styles.getStarted,
-                )}
-                to={useBaseUrl('docs/')}>
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </section>
-
+      <main className={clsx('container', styles.intro)}>
+        <div className="markdown">
+          <MDXContent>
+            <IntroductionMarkdown />
+          </MDXContent>
+        </div>
       </main>
     </Layout>
   );
