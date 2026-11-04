@@ -1,18 +1,25 @@
+/* Primary color: a brighter version of the "provenance" plum in the nanopublication diagram, so
+   that links are readable on the background and stand out from the body text. Dark mode uses a
+   lighter plum. Shades generated as in
+   https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima */
 :root {
-  --ifm-color-primary: #4c89c7;
-  --ifm-color-primary-dark: #3b7bbd;
-  --ifm-color-primary-darker: #3874b2;
-  --ifm-color-primary-darkest: #2e6093;
-  --ifm-color-primary-light: #6197ce;
-  --ifm-color-primary-lighter: #6b9ed1;
-  --ifm-color-primary-lightest: #8bb2db;
+  --ifm-color-primary: #af3c89;
+  --ifm-color-primary-dark: #9e367b;
+  --ifm-color-primary-darker: #953374;
+  --ifm-color-primary-darkest: #7b2a60;
+  --ifm-color-primary-light: #bf4496;
+  --ifm-color-primary-lighter: #c24c9b;
+  --ifm-color-primary-lightest: #cb67aa;
 }
-/* Change color here: https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
-*/
 
-a:hover {
-  color: #1565c0;
-  text-decoration: none;
+html[data-theme='dark'] {
+  --ifm-color-primary: #ce6eae;
+  --ifm-color-primary-dark: #c656a1;
+  --ifm-color-primary-darker: #c24b9a;
+  --ifm-color-primary-darkest: #a53881;
+  --ifm-color-primary-light: #d686bb;
+  --ifm-color-primary-lighter: #da91c2;
+  --ifm-color-primary-lightest: #e6b5d6;
 }
 
 .header-github-link:hover {
