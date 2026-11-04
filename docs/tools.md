@@ -29,7 +29,7 @@ The jar is on [Maven Central](https://repo1.maven.org/maven2/org/nanopub/nanopub
 | Java | [nanopub-java](https://nanopublication.github.io/nanopub-java/), the reference implementation | Maven: `org.nanopub:nanopub` |
 | Python | [nanopub-py](https://nanopublication.github.io/nanopub-py/) | `pip install nanopub` |
 | JavaScript / TypeScript | [nanopub-js](https://github.com/nanopublication/nanopub-js), for Node.js and the browser | `npm install @nanopub/nanopub-js` |
-| Rust | [nanopub-rs](https://vemonet.github.io/nanopub-rs/), with bindings for Python and JavaScript | `cargo add nanopub` |
+| Rust | [nanopub-rs](https://nanopublication.github.io/nanopub-rs/), with bindings for Python and JavaScript | `cargo add nanopub` |
 
 All of them can sign, verify, and publish nanopublications.
 

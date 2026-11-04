@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import { NanopubClient } from "@nanopub/nanopub-js";
-import MDSessions from "./previous-sessions.md";
+import DOMPurify from "dompurify";
+import MDSessions from "./_previous-sessions.md";
 import styles from "./styles.module.css";
 
 declare module "react" {
@@ -20,8 +21,10 @@ type SessionRow = {
   np: string;
   label: string;
   resource: string;
-  subEvents: { np: string; label: string }[];
+  subEvents: SubEvent[];
 };
+
+type SubEvent = { np: string; label: string; resource: string };
 
 const MIN_SESSION = 27;
 const QUERY_TEMPLATE = "RAGxWuFSWFeXyoCZiJpaVMwH-_9-fLX3GFPb5XI-KHIok/get-sub-resources";
@@ -78,6 +81,68 @@ const EMPTY_SET: ReadonlySet<string> = new Set<string>();
 
 function sameSet(a: ReadonlySet<string>, b: ReadonlySet<string>) {
   return a.size === b.size && [...a].every((v) => b.has(v));
+}
+
+// Workaround for https://github.com/Nanopublication/nanopub-elements/issues/64:
+// <nanopub-item> shows the first resource of a nanopub's assertion, but a
+// session's nanopub can list another one first (#36 starts with a preset
+// assignment), and the item then renders empty. In that case, fill the item's
+// template from the session resource itself, with the fields and date format
+// that <nanopub-item> uses.
+const FIELDS: Record<string, string> = {
+  label: "http://www.w3.org/2000/01/rdf-schema#label",
+  startDate: "http://schema.org/startDate",
+  description: "http://purl.org/dc/terms/description",
+};
+
+type JsonLdValue = { "@value"?: string; "@id"?: string };
+type JsonLdNode = { "@id"?: string; [predicate: string]: unknown };
+type JsonLdGraph = { "@id"?: string; "@graph"?: JsonLdNode[] };
+
+const itemHeading = (el: Element) => el.querySelector("h3, h4");
+
+function formatDateTime(value: string) {
+  const date = new Date(value);
+  if (isNaN(date.getTime())) return value;
+  return date.toLocaleString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
+}
+
+// Returns whether the item has a heading afterwards.
+async function renderResourceInto(el: HTMLElement, client: NanopubClient) {
+  const np = el.getAttribute("uri");
+  const resource = el.dataset.resource;
+  const template = el.querySelector("template");
+  if (!np || !resource || !template) return false;
+  const jsonld = (await client.fetchNanopub(np, "jsonld")) as unknown as JsonLdGraph[];
+  const node = jsonld
+    .find((g) => g["@id"]?.endsWith("/assertion"))
+    ?.["@graph"]?.find((n) => n["@id"] === resource);
+  if (!node) return false;
+  const value = (field: string | undefined) =>
+    ((node[FIELDS[field ?? ""] ?? ""] ?? []) as JsonLdValue[])
+      .map((v) => v["@value"] ?? v["@id"] ?? "")
+      .filter(Boolean)
+      .join("\n");
+  const fragment = template.content.cloneNode(true) as DocumentFragment;
+  fragment.querySelectorAll<HTMLElement>("[data-bind]").forEach((n) => {
+    const v = value(n.dataset.bind);
+    n.textContent = n.dataset.format === "datetime" ? formatDateTime(v) : v;
+  });
+  fragment.querySelectorAll<HTMLElement>("[data-bind-html]").forEach((n) => {
+    n.innerHTML = DOMPurify.sanitize(value(n.dataset.bindHtml));
+  });
+  Array.from(el.childNodes).forEach((c) => {
+    if (!(c instanceof HTMLTemplateElement)) c.remove();
+  });
+  el.appendChild(fragment);
+  return !!itemHeading(el)?.textContent?.trim();
 }
 
 function extractSessionNumber(label: string): number | undefined {
@@ -206,14 +271,18 @@ export default function SessionsPage() {
       // arrive instead of blocking the initial render on all of them.
       await Promise.all(
         shown.map(async (r) => {
-          const subEvents: { np: string; label: string }[] = [];
+          const subEvents: SubEvent[] = [];
           try {
             for await (const sub of client.runQueryTemplate(QUERY_TEMPLATE, {
               super_resource: r.resource,
               "api-version": "latest",
             })) {
               if (!sub.resource || !sub.np || !sub.resource_label) continue;
-              subEvents.push({ np: sub.np, label: sub.resource_label });
+              subEvents.push({
+                np: sub.np,
+                label: sub.resource_label,
+                resource: sub.resource,
+              });
             }
           } catch {
             // Treat sub-resource fetch failures as "no sub-events".
@@ -233,12 +302,36 @@ export default function SessionsPage() {
   useEffect(() => {
     const root = sectionRef.current;
     if (!root) return;
+    const client = new NanopubClient();
+    // Items being filled in by renderResourceInto, and nanopubs where that did
+    // not produce a heading either. The latter count as done, so that they do
+    // not hold up the markdown sessions, and are not tried again.
+    const fixing = new WeakSet<Element>();
+    const failed = new Set<string>();
+    const uriOf = (el: Element) => el.getAttribute("uri") ?? "";
     const update = () => {
       const staticRoot = staticRef.current;
       const dynamicRoot = dynamicRef.current;
 
+      // A rendered heading without text means <nanopub-item> picked the wrong
+      // resource (see renderResourceInto).
+      for (const el of Array.from(
+        root.querySelectorAll<HTMLElement>("nanopub-item[data-resource]"),
+      )) {
+        const h = itemHeading(el);
+        if (!h || h.textContent?.trim() || fixing.has(el) || failed.has(uriOf(el))) continue;
+        fixing.add(el);
+        renderResourceInto(el, client)
+          .catch(() => false)
+          .then((ok) => {
+            if (!ok) failed.add(uriOf(el));
+            fixing.delete(el);
+            update();
+          });
+      }
+
       // A <nanopub-item> holds nothing but its inert <template> until its fetch
-      // resolves, so a rendered heading is what marks it as done. The
+      // resolves, so a heading with text is what marks it as done. The
       // placeholder title sits outside the element, so it never counts here.
       const items = dynamicRoot
         ? Array.from(
@@ -246,9 +339,7 @@ export default function SessionsPage() {
           )
         : [];
       const done = new Set(
-        items
-          .filter((el) => el.querySelector("h3"))
-          .map((el) => el.getAttribute("uri") ?? ""),
+        items.filter((el) => itemHeading(el)?.textContent?.trim()).map(uriOf),
       );
       // Returning the previous set when nothing changed bails out of the
       // re-render this observer would otherwise trigger on every mutation.
@@ -259,7 +350,7 @@ export default function SessionsPage() {
         !staticShownRef.current &&
         sessions.length > 0 &&
         items.length === sessions.length &&
-        done.size === items.length
+        items.every((el) => done.has(uriOf(el)) || failed.has(uriOf(el)))
       ) {
         staticShownRef.current = true;
         setStaticShown(true);
@@ -381,6 +472,7 @@ export default function SessionsPage() {
                   {!rendered.has(s.np) && <h3>{s.label}</h3>}
                   <nanopub-item
                     uri={s.np}
+                    data-resource={s.resource}
                     dangerouslySetInnerHTML={ITEM_TEMPLATE}
                   />
                   {s.subEvents.length > 0 && (
@@ -393,6 +485,7 @@ export default function SessionsPage() {
                           <nanopub-item
                             key={sub.np}
                             uri={sub.np}
+                            data-resource={sub.resource}
                             dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
                           />
                         ))}

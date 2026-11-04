@@ -6,7 +6,7 @@ module.exports={
   "organizationName": "Nanopublication",
   "projectName": "nanopub-website",
   // trailingSlash: false,
-  "favicon": "img/icon.png",
+  "favicon": "img/favicon.png",
   "customFields": {
     "repoUrl": "https://github.com/Nanopublication/nanopub-website",
     "markdownPlugins": [
@@ -26,6 +26,7 @@ module.exports={
     [
       "@docusaurus/preset-classic",
       {
+        "blog": false,
         "docs": {
           "showLastUpdateTime": true,
           "path": "./docs",
@@ -46,6 +47,7 @@ module.exports={
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
         language: ["en"],
+        indexBlog: false,
       },
     ],
     require.resolve('docusaurus-plugin-image-zoom'),
@@ -57,6 +59,9 @@ module.exports={
     // ],
   ],
   "themeConfig": {
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     docs: {
       sidebar: {
         hideable: true,

@@ -234,7 +234,7 @@ The last line shows the trusty URI of your new nanopublication.
 Two things to know before you publish on the live network, which is what `publish` does without `-u`:
 
 - **Nothing can be deleted.** You can supersede a nanopublication with a new version, or retract it with `np retract`, but the original stays on the network.
-- **Your key has to be linked to you.** A signature proves which key signed, not who owns the key. For your nanopublications to be attributed to your ORCID iD, you declare your key in an introduction nanopublication ([example](https://w3id.org/np/RASg5YBHpsSUMkLa4RVy55dTDZL9XA-Q3F-lqDIc9Jm7Q)), which an already trusted user then endorses. Nanodash can set this up for you when you log in with your ORCID iD.
+- **Your key has to be linked to you.** A signature proves which key signed, not who owns the key. For your nanopublications to be attributed to your ORCID iD, you declare your key in an introduction nanopublication ([example](https://w3id.org/np/RASg5YBHpsSUMkLa4RVy55dTDZL9XA-Q3F-lqDIc9Jm7Q)), which an already trusted user then endorses. Nanodash generates a key for you automatically, and shows you how to publish the introduction.
 
 ## From code
 

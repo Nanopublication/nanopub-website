@@ -6,7 +6,7 @@ import MDXContent from '@theme/MDXContent';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
-import IntroductionMarkdown from './introduction.md';
+import IntroductionMarkdown from './_introduction.md';
 
 
 function Home() {
