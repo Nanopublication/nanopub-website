@@ -1,53 +1,45 @@
 ---
 id: tools
 title: Tools
+description: User interfaces, the command-line tool, libraries, and AI agent support for nanopublications.
 ---
 
 These tools let you create, publish, and query nanopublications.
+The [quick start](/docs/) shows the command-line tool and the JavaScript library in action.
 
-## 🤖 AI agents
+## User interfaces
 
-- [**nanopub-skill**](https://github.com/knowledgepixels/nanopub-skill) is an Agent Skill that lets AI coding agents
-  work with nanopublications in natural language: creating, signing, publishing, querying, superseding, and retracting
-  them, as well as authoring templates, resource views, and Spaces. It follows the open
-  [Agent Skills](https://agentskills.io) format, and so works with Claude Code, OpenAI Codex, Gemini CLI, Cursor,
-  GitHub Copilot, and many other agents.
+- [**Nanodash**](https://nanodash.knowledgepixels.com/) ([code](https://github.com/knowledgepixels/nanodash)) is a web interface for browsing, searching, and publishing nanopublications, with templates that make it easy to create them without writing RDF.
+- The [**Knowledge Collaboratory**](https://collaboratory.semanticscience.org/) helps annotate biomedical text, publish those annotations as nanopublications, and browse them.
 
-## 👩‍💻 User interfaces
+## Command line
 
-- [**Nanodash**](https://github.com/knowledgepixels/nanodash) is a nanopublication user interface offering easy-to-use
-  templates for nanopublication creation, custom feeds, and search.
-- The [**Knowledge Collaboratory**](https://collaboratory.semanticscience.org/) is a service to help annotate biomedical
-  text, publish those annotations as nanopublications, and browse nanopublications.
+The [nanopub-java](https://github.com/Nanopublication/nanopub-java) release jar is also a command-line tool, with commands such as `check`, `sign`, `publish`, `retract`, `query`, and `mkkeys`:
 
-## 📚️ Libraries
+```bash
+java -jar nanopub-<version>-jar-with-dependencies.jar check my-nanopub.trig
+```
 
-Libraries in various languages are available to manipulate and publish nanopublications:
+The jar is on [Maven Central](https://repo1.maven.org/maven2/org/nanopub/nanopub/), and the [quick start](/docs/) shows how to download the latest one.
 
-### ☕️ Java
+## Libraries
 
-- [**nanopub-java**](https://nanopublication.github.io/nanopub-java/) ([paper](https://arxiv.org/abs/1508.04977)): the
-  official implementation to sign, verify, and publish nanopubs.
+| Language | Library | Install |
+| --- | --- | --- |
+| Java | [nanopub-java](https://nanopublication.github.io/nanopub-java/), the reference implementation | Maven: `org.nanopub:nanopub` |
+| Python | [nanopub-py](https://nanopublication.github.io/nanopub-py/) | `pip install nanopub` |
+| JavaScript / TypeScript | [nanopub-js](https://github.com/nanopublication/nanopub-js), for Node.js and the browser | `npm install @nanopub/nanopub-js` |
+| Rust | [nanopub-rs](https://vemonet.github.io/nanopub-rs/), with bindings for Python and JavaScript | `cargo add nanopub` |
 
-### 🐍 Python
+All of them can sign, verify, and publish nanopublications.
 
-- [**nanopub-py**](https://nanopublication.github.io/nanopub-py/): a Python implementation to sign, verify, and publish
-  nanopubs.
+## AI agents
 
-### 🚀 JavaScript
+[**nanopub-skill**](https://github.com/knowledgepixels/nanopub-skill) is an Agent Skill that lets AI coding agents work with nanopublications in natural language: creating, signing, publishing, querying, superseding, and retracting them, as well as authoring templates, resource views, and Spaces.
+It follows the open [Agent Skills](https://agentskills.io) format, and so works with Claude Code, OpenAI Codex, Gemini CLI, Cursor, GitHub Copilot, and many other agents.
 
-- [**nanopub-js**](https://github.com/nanopublication/nanopub-js): a TypeScript library for creating, signing,
-  publishing, and querying nanopublications.
+## Related links
 
-### 🪄 Multi-platform
-
-- [**nanopub-rs**](https://vemonet.github.io/nanopub-rs/): a comprehensive cross-platform toolkit to sign, publish, and
-  verify nanopublications.
-
-## 🔗 Related links
-
-You can find other tools in the GitHub organization: [Nanopublication](https://github.com/Nanopublication/)
-
-More information about [Trusty URIs](https://trustyuri.net/), the content-based identifiers that nanopublications use.
-
-[See this paper](https://arxiv.org/abs/1809.06532) for datasets using nanopublications.
+- More tools are in the [Nanopublication](https://github.com/Nanopublication/) and [Knowledge Pixels](https://github.com/knowledgepixels/) GitHub organizations.
+- [Trusty URIs](https://trustyuri.net/) are the hash-based identifiers that nanopublications use.
+- [A Robust Decentralized Infrastructure for Trust-Aware Open Knowledge Sharing](https://knowledgepixels.com/nanopub-ecosystem-paper/) (ISWC 2026) is the paper on the nanopublication ecosystem: its services, network, and trust algorithm.

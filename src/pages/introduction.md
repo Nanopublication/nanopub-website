@@ -74,8 +74,9 @@ This makes data easier to find, access, and reuse (see the [FAIR principles](htt
 
 ## Get started
 
-- Read the [guidelines](/docs) and look at more [examples](/docs/examples).
+- Follow the [quick start](/docs/) to fetch, query, verify, and publish nanopublications from the command line.
+- Read the [guidelines](/docs/guidelines) and look at more [examples](/docs/examples).
 - Browse, create, and publish nanopublications in your browser with [Nanodash](https://nanodash.knowledgepixels.com/).
 - Use one of the [libraries](/docs/tools) for Java, Python, JavaScript, or Rust.
 - Let an AI coding agent do it for you with the [nanopub Agent Skill](https://github.com/knowledgepixels/nanopub-skill).
-- Read the [published articles](https://scholar.google.com/scholar?q=nanopublications) about nanopublications.
+- Read the paper on the nanopublication ecosystem: [A Robust Decentralized Infrastructure for Trust-Aware Open Knowledge Sharing](https://knowledgepixels.com/nanopub-ecosystem-paper/) (ISWC 2026).

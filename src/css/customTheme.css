@@ -48,3 +48,8 @@ html[data-theme='dark'] .diagram {
   border-radius: 8px;
   padding: 12px;
 }
+
+/* Markdown pages, such as Contact, get the same readable width as the homepage text. */
+.mdx-page main.container {
+  max-width: 800px;
+}

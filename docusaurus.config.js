@@ -114,7 +114,8 @@ module.exports={
         {
           title: 'Docs',
           items: [
-            { label: 'Guidelines', to: '/docs/' },
+            { label: 'Quick start', to: '/docs/' },
+            { label: 'Guidelines', to: '/docs/guidelines' },
             { label: 'Examples', to: '/docs/examples' },
             { label: 'Tools', to: '/docs/tools' },
             { label: 'Tutorials', to: '/docs/tutorials/' },

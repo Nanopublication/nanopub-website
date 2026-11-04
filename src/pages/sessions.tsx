@@ -306,10 +306,10 @@ export default function SessionsPage() {
         <main className={styles.sessionsMain}>
           <h1>Nano Sessions</h1>
           <p>
-            The Nano Sessions connect the people who are interested in
-            nanopublications and who want to learn from each other about the
-            related technologies. Every session consists of two 10-minute talks,
-            discussion, and a news sharing part. See the{" "}
+            The Nano Sessions are regular online meetings for everyone
+            interested in nanopublications. A session usually has two
+            10-minute talks, followed by discussion and news from the
+            community. The{" "}
             <a
               href="https://docs.google.com/document/d/1-0aImR4bFHmay8j6bSFgIDi9sw01KXdmYw9szyhAWmY/edit#"
               target="_blank"
@@ -317,61 +317,59 @@ export default function SessionsPage() {
             >
               description
             </a>{" "}
-            for more information.
+            has more details.
           </p>
           <p>
+            Want to present a use case, an idea, or a problem you can’t
+            solve?{" "}
+            <a href="mailto:virginia@knowledgepixels.com">Send an email</a> to
+            get a slot in an upcoming session. The sessions are hosted by{" "}
             <a
               href="https://knowledgepixels.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Knowledge Pixels
-            </a>{" "}
-            hosts the first meetings, but we are happy to let others join and
-            become hosts too. Do you want to share some insights, a problem you
-            can’t solve, or a use case you are working on? Send an{" "}
-            <a href="mailto:virginia@knowledgepixels.com">email</a> to get a
-            slot in an upcoming session.
+            </a>
+            , and others are welcome to become hosts too.
           </p>
-          <h2>Important Links</h2>
+          <h2>How to join</h2>
           <ul>
             <li>
-              All sessions are in this{" "}
+              All sessions take place in this{" "}
               <a
                 href="https://meet.jit.si/nanosession"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
                 Jitsi channel
               </a>
-              . Anyone can join without registration.
+              . Anyone can join, without registration.
             </li>
             <li>
-              We use these{" "}
-              <a
-                href="https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
-                notes{" "}
-              </a>{" "}
-              during the sessions and for the record.
-            </li>
-            <li>
-              The meetings are open to everyone and invitations are sent out by
-              email. Subscribe to our{" "}
+              Invitations are sent to the{" "}
               <a
                 href="https://groups.google.com/g/nanopub-users/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Google Group
+                nanopub-users mailing list
+              </a>
+              . To subscribe, click <em>Ask to join group</em>.
+            </li>
+            <li>
+              We take{" "}
+              <a
+                href="https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                notes
               </a>{" "}
-              by hitting <em>Ask to join group</em> and be notified.
+              during the sessions and keep them for the record.
             </li>
           </ul>
+          <h2>Sessions</h2>
           <section ref={sectionRef} className={styles.sessionList}>
             <div ref={dynamicRef}>
               {sessions.map((s) => (
