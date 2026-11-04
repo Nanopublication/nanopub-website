@@ -33,9 +33,24 @@ html[data-theme='dark'] .header-github-link:before {
     no-repeat;
 }
 
-/* Infima switches hero text to dark in dark mode, which is unreadable on the blue hero. */
+/* Homepage title section: near-black, with an amber call to action and a bottom stripe in the
+   colors of the nanopublication diagram (assertion, provenance, publication info). */
 .hero--primary {
+  --ifm-hero-background-color: #16191f;
   --ifm-hero-text-color: #fff;
+  border-bottom: 10px solid;
+  border-image: linear-gradient(90deg, #ffbb00 0 33.33%, #8d3b72 33.33% 66.66%, #325981 66.66%) 1;
+}
+
+.hero--primary .button--secondary:not(.button--outline) {
+  background-color: #ffbb00;
+  border-color: #ffbb00;
+  color: #1c1e21;
+}
+
+.hero--primary .button--secondary:not(.button--outline):hover {
+  background-color: #e6a800;
+  border-color: #e6a800;
 }
 
 .hero--primary .button.button--outline.button--secondary:not(:hover) {
@@ -52,4 +67,9 @@ html[data-theme='dark'] .diagram {
 /* Markdown pages, such as Contact, get the same readable width as the homepage text. */
 .mdx-page main.container {
   max-width: 800px;
+}
+
+/* The navbar logo is a black "N" on a transparent background; show it in white in dark mode. */
+html[data-theme='dark'] .navbar__logo img {
+  filter: invert(1);
 }
