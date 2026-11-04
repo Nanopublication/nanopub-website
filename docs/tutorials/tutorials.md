@@ -1,6 +1,7 @@
 ---
 id: tutorials
 title: Tutorials
+sidebar_label: Overview
 slug: /tutorials/
 description: Tutorial materials for learning nanopublications, with slides, recordings, and exercises.
 ---
@@ -8,16 +9,6 @@ description: Tutorial materials for learning nanopublications, with slides, reco
 Material from our tutorials, newest first.
 To try nanopublications on your own right away, see the [quick start](/docs/).
 
-## SEMANTiCS 2026
-
-"Hands-On Nanopublications: Creating, Publishing, and Querying Structured Knowledge on a Decentralized Semantic Web Network", a tutorial at [SEMANTiCS 2026](https://2026-eu.semantics.cc/) in Ghent, Belgium.
-The materials are in the [Nanopub Tutorial Space](https://w3id.org/spaces/semantics/2026-eu/nanopub-tutorial).
-
-## ESWC 2025
-
-A full-day tutorial at ESWC 2025 in Portorož, Slovenia.
-See the [overview](/docs/tutorials/eswc2025) and the [program](/docs/tutorials/eswc2025program/) with slides and video recordings.
-
-## Nanopub Demo (2024)
-
-An [interactive demo](https://knowledgepixels.com/nanopub-demo/) of nanopublications, including a video.
+- [SEMANTiCS 2026](/docs/tutorials/semantics2026): hands-on tutorial in Ghent, Belgium, with materials in the Nanopub Tutorial Space.
+- [ESWC 2025](/docs/tutorials/eswc2025): full-day tutorial in Portorož, Slovenia, with a [program](/docs/tutorials/eswc2025program/) of slides and video recordings.
+- [Nanopub Demo (2024)](/docs/tutorials/nanopubdemo2024): interactive demo of nanopublications, including a video.

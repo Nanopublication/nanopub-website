@@ -3,6 +3,14 @@
     "quickstart", "guidelines", "examples", "architecture", "tools", "applications"
   ],
   "tutorials": [
-    "tutorials/tutorials", "tutorials/eswc2025"
+    "tutorials/tutorials",
+    "tutorials/semantics2026",
+    {
+      "type": "category",
+      "label": "ESWC 2025",
+      "collapsed": false,
+      "items": ["tutorials/eswc2025", "tutorials/eswc2025program"]
+    },
+    "tutorials/nanopubdemo2024"
   ]
 }
