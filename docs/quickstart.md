@@ -2,10 +2,33 @@
 id: quickstart
 title: Quick Start
 slug: /
-description: Fetch, query, verify, and publish nanopublications from the command line.
+description: Ways to start with nanopublications, and a walk-through from fetching to publishing on the command line.
 ---
 
-This page goes from reading nanopublications to publishing your own. Steps 1 and 2 only need `curl`. Steps 3 and 4 use the command-line tool, which needs Java 21 or newer.
+import Link from '@docusaurus/Link';
+
+There are several ways to start, depending on how you like to work:
+
+<div className="start-paths">
+  <Link className="start-path start-path--browser" href="https://nanodash.knowledgepixels.com/">
+    <strong>In your browser</strong>
+    <span>Browse, search, and publish nanopublications with Nanodash. Its templates mean you don't have to write RDF.</span>
+  </Link>
+  <Link className="start-path start-path--cli" href="#1-fetch-a-nanopublication">
+    <strong>On the command line</strong>
+    <span>Fetch, query, verify, and publish nanopublications with curl and the command-line tool. Follow the steps below.</span>
+  </Link>
+  <Link className="start-path start-path--code" to="/docs/tools">
+    <strong>From code</strong>
+    <span>Use a library for Java, Python, JavaScript, or Rust. There is a JavaScript example at the end of this page.</span>
+  </Link>
+  <Link className="start-path start-path--agent" href="https://github.com/knowledgepixels/nanopub-skill">
+    <strong>With an AI agent</strong>
+    <span>Ask your coding agent to create, publish, and query nanopublications, using the nanopub Agent Skill.</span>
+  </Link>
+</div>
+
+The steps below go from reading nanopublications to publishing your own. Steps 1 and 2 only need `curl`. Steps 3 and 4 use the command-line tool, which needs Java 21 or newer.
 
 ## 1. Fetch a nanopublication
 
@@ -21,8 +44,52 @@ The [examples page](/docs/examples) has more to try.
 
 ## 2. Query the network
 
-Published nanopublications are loaded into [Nanopub Query](https://query.knowledgepixels.com/) instances, which offer SPARQL endpoints.
-These are the five most recent nanopublications:
+Published nanopublications are loaded into [Nanopub Query](https://query.knowledgepixels.com/) instances.
+You can call ready-made queries through a REST API, or write your own SPARQL.
+
+### Ready-made queries
+
+Each API endpoint runs a query that is itself published as a nanopublication.
+The endpoint URL is that nanopublication's ID plus the query name, and the placeholders in the query become URL parameters.
+This one is a full-text search:
+
+```bash
+API=https://query.knowledgepixels.com/api
+curl -G $API/RAxdh5xkc6K6SMLY23yKu__zTWJPXeRFc0qgNNxkbOkpY/fulltext-search.csv \
+  --data-urlencode "query=Carabus granulatus"
+```
+
+Nanopublications cannot be changed, so a new version is a new nanopublication that supersedes the old one.
+The announcement of [Nano Session](/sessions) #29, for example, was edited several times.
+This query finds the latest version, starting from the first:
+
+```bash
+API=https://query.knowledgepixels.com/api
+curl -G $API/RAiRsB2YywxjsBMkVRTREJBooXhf2ZOHoUs5lxciEl37I/get-latest-version-of-np.csv \
+  --data-urlencode "np=https://w3id.org/np/RAgITiAZA5yLltVB07D47Oo-kKVHOemwAkXnCq_ZYJtME"
+```
+
+```text
+latest,date
+https://w3id.org/np/RAiODd0jLYxpvX3EHNpJfJr3mtcHgAo-QmYWoNYRqHvE0,2026-03-17T19:04:07.326Z
+```
+
+The `.csv` suffix selects the result format, and `.json` works too.
+To see exactly what an endpoint does, fetch its definition like any other nanopublication:
+
+```bash
+curl -L -H "Accept: application/trig" \
+  https://w3id.org/np/RAiRsB2YywxjsBMkVRTREJBooXhf2ZOHoUs5lxciEl37I
+```
+
+Its assertion contains the SPARQL query, where the placeholder `?_np_iri` becomes the `np` parameter.
+Because the definition is immutable too, an endpoint URL always runs the same query.
+[This query](https://query.knowledgepixels.com/api/RAQqjXQYlxYQeI4Y3UQy9OrD5Jx1E3PJ8KwKKQlWbiYSw/get-queries.csv) lists all available ones.
+
+### Your own SPARQL
+
+The SPARQL endpoints cover all nanopublications.
+These are the five most recent ones:
 
 ```bash
 curl -G https://query.knowledgepixels.com/repo/full \
@@ -39,8 +106,7 @@ curl -G https://query.knowledgepixels.com/repo/full \
 
 The `npa:graph` graph holds metadata that the query service adds for each nanopublication, such as its label, its date, and the public key it was validly signed with.
 
-Since nanopublications are immutable, old versions stay on the network.
-This query finds all nanopublications whose assertion mentions a given beetle species, leaving out the ones that their authors retracted or superseded with a new version:
+This query finds all nanopublications whose assertion mentions the beetle species, leaving out the ones that their authors retracted or superseded with a new version:
 
 ```bash
 curl -G https://query.knowledgepixels.com/repo/full \
@@ -66,7 +132,6 @@ curl -G https://query.knowledgepixels.com/repo/full \
 ```
 
 To experiment, use the [SPARQL editor](https://query.knowledgepixels.com/tools/full/yasgui.html) in your browser.
-There are also ready-made queries that run as a REST API. Each one is itself published as a nanopublication, and [this one](https://query.knowledgepixels.com/api/RAQqjXQYlxYQeI4Y3UQy9OrD5Jx1E3PJ8KwKKQlWbiYSw/get-queries.csv) lists all of them.
 
 ## 3. Verify a nanopublication
 
@@ -186,6 +251,14 @@ console.log(await client.fetchNanopub(
   'https://w3id.org/np/RAlohixCBWPuGLSKA7mmR8k01EQvC_dRWwAU70kvvwKPo'));
 for await (const row of client.findNanopubsWithText('Carabus granulatus')) {
   console.log(row.np, row.label);
+}
+
+// Run a ready-made query
+for await (const row of client.runQueryTemplate(
+  'RAiRsB2YywxjsBMkVRTREJBooXhf2ZOHoUs5lxciEl37I/get-latest-version-of-np',
+  { np: 'https://w3id.org/np/RAgITiAZA5yLltVB07D47Oo-kKVHOemwAkXnCq_ZYJtME' },
+)) {
+  console.log(row.latest, row.date);
 }
 
 // Sign and publish to the test server

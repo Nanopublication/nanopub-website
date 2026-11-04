@@ -73,3 +73,52 @@ html[data-theme='dark'] .diagram {
 html[data-theme='dark'] .navbar__logo img {
   filter: invert(1);
 }
+
+/* "Ways to start" cards on the quick start page. Their top edges use the colors of the
+   nanopublication diagram, like the stripe on the homepage. */
+.start-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+@media (max-width: 640px) {
+  .start-paths {
+    grid-template-columns: 1fr;
+  }
+}
+
+.start-path {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-top: 4px solid var(--start-path-color);
+  border-radius: 8px;
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.start-path:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  border-color: var(--ifm-color-emphasis-500);
+  border-top-color: var(--start-path-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.start-path strong {
+  font-size: 1.05rem;
+}
+
+.start-path span {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.start-path--browser { --start-path-color: #ffbb00; }
+.start-path--cli { --start-path-color: #8d3b72; }
+.start-path--code { --start-path-color: #325981; }
+.start-path--agent { --start-path-color: var(--ifm-color-emphasis-600); }
