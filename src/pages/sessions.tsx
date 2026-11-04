@@ -138,6 +138,9 @@ async function renderResourceInto(el: HTMLElement, client: NanopubClient) {
   fragment.querySelectorAll<HTMLElement>("[data-bind-html]").forEach((n) => {
     n.innerHTML = DOMPurify.sanitize(value(n.dataset.bindHtml));
   });
+  fragment.querySelectorAll<HTMLElement>("[data-bind-data-start]").forEach((n) => {
+    n.dataset.start = value(n.dataset.bindDataStart);
+  });
   Array.from(el.childNodes).forEach((c) => {
     if (!(c instanceof HTMLTemplateElement)) c.remove();
   });
@@ -160,12 +163,14 @@ function SessionsTOC({
   headings: { id: string; label: string }[];
 }) {
   return (
-    <nav style={{ position: "sticky", top: "1rem" }}>
-      <strong>Sessions</strong>
-      <ul style={{ listStyle: "none", padding: 0, margin: "0.5rem 0" }}>
+    <nav className={`table-of-contents ${styles.sessionsTocNav}`}>
+      <strong className={styles.sessionsTocTitle}>Sessions</strong>
+      <ul className="table-of-contents">
         {headings.map((h) => (
-          <li key={h.id} style={{ margin: "0.25rem 0" }}>
-            <a href={`#${h.id}`}>{h.label}</a>
+          <li key={h.id}>
+            <a className="table-of-contents__link" href={`#${h.id}`}>
+              {h.label}
+            </a>
           </li>
         ))}
       </ul>
@@ -173,12 +178,230 @@ function SessionsTOC({
   );
 }
 
+const PAGE_SECTIONS = [
+  { id: "overview", label: "Overview" },
+  { id: "how-to-join", label: "How to join" },
+  { id: "sessions", label: "Upcoming and past sessions" },
+];
+
+const PAGE_SECTION_IDS = PAGE_SECTIONS.map((s) => s.id);
+
+/**
+ * Tracks which page section is currently scrolled into view.
+ *
+ * @param ids the element ids of the sections, in page order
+ * @return the id of the last section whose top has passed the navbar
+ */
+function useActiveSection(ids: string[]) {
+  const [active, setActive] = useState(ids[0]);
+  useEffect(() => {
+    const onScroll = () => {
+      const offset = 120;
+      const passed = ids.filter((id) => {
+        const el = document.getElementById(id);
+        return el && el.getBoundingClientRect().top <= offset;
+      });
+      setActive(passed[passed.length - 1] ?? ids[0]);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [ids]);
+  return active;
+}
+
+/**
+ * Shows the page's own sections as a sidebar menu.
+ *
+ * @return the sidebar navigation
+ */
+function SessionsSidebar() {
+  const active = useActiveSection(PAGE_SECTION_IDS);
+  return (
+    <nav className={`menu ${styles.sessionsSidebarNav}`} aria-label="Nano Sessions">
+      <ul className="menu__list">
+        {PAGE_SECTIONS.map((section) => (
+          <li key={section.id} className="menu__list-item">
+            <a
+              href={`#${section.id}`}
+              className={`menu__link ${active === section.id ? "menu__link--active" : ""}`}
+            >
+              {section.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+const JITSI_URL = "https://meet.jit.si/nanosession";
+const MAILING_LIST_URL = "https://groups.google.com/g/nanopub-users/";
+const NOTES_URL =
+  "https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#";
+const DESCRIPTION_URL =
+  "https://docs.google.com/document/d/1-0aImR4bFHmay8j6bSFgIDi9sw01KXdmYw9szyhAWmY/edit#";
+const SPEAKER_CONTACT = "mailto:virginia@knowledgepixels.com";
+const SESSION_LENGTH_MS = 2 * 60 * 60 * 1000;
+
+type StartDates = Readonly<Record<string, string>>;
+
+const EMPTY_START_DATES: StartDates = {};
+
+/**
+ * Tells whether two sets of start dates hold the same entries.
+ *
+ * @param a the first start dates, keyed by nanopub URI
+ * @param b the second start dates, keyed by nanopub URI
+ * @return true if both hold the same URIs with the same dates
+ */
+function sameStartDates(a: StartDates, b: StartDates) {
+  const keys = Object.keys(a);
+  return keys.length === Object.keys(b).length && keys.every((k) => a[k] === b[k]);
+}
+
+/**
+ * Tells whether a session has not ended yet.
+ *
+ * @param start the session's start date as an ISO 8601 string
+ * @param now the current time in milliseconds since the epoch
+ * @return true if the session starts in the future or is still running
+ */
+function isUpcoming(start: string | undefined, now: number) {
+  if (!start) return false;
+  const time = new Date(start).getTime();
+  return !isNaN(time) && time + SESSION_LENGTH_MS > now;
+}
+
+/**
+ * Finds the earliest session that has not ended yet.
+ *
+ * @param sessions the sessions to search
+ * @param startDates the start dates of the sessions, keyed by nanopub URI
+ * @param now the current time in milliseconds since the epoch
+ * @return the next session, or undefined if none is scheduled
+ */
+function findNextSession(sessions: SessionRow[], startDates: StartDates, now: number) {
+  return sessions
+    .filter((s) => isUpcoming(startDates[s.np], now))
+    .sort((a, b) => new Date(startDates[a.np]).getTime() - new Date(startDates[b.np]).getTime())[0];
+}
+
+/**
+ * Opens a link in a new tab, safely.
+ *
+ * @param props the link's target and content
+ * @return the anchor element
+ */
+function ExternalLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  );
+}
+
+/**
+ * Lists the key facts about the Nano Sessions at a glance.
+ *
+ * @return the grid of facts
+ */
+function SessionFacts() {
+  const facts = [
+    { title: "Online", text: "In a Jitsi video call, right in your browser" },
+    { title: "Roughly monthly", text: "On a weekday at 16:00 Amsterdam time" },
+    { title: "Open to everyone", text: "Free, with no registration or account" },
+    { title: "Talks and discussion", text: "Usually two 10-minute talks, then open discussion" },
+  ];
+  return (
+    <ul className={styles.sessionFacts}>
+      {facts.map((f) => (
+        <li key={f.title}>
+          <strong>{f.title}</strong>
+          <span>{f.text}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * Highlights the next scheduled session with links to join it.
+ *
+ * @param props the next session and its start date, if one is scheduled
+ * @return the call-to-action card
+ */
+function NextSessionCard({ session, start }: { session?: SessionRow; start?: string }) {
+  return (
+    <section className={styles.nextSession}>
+      <span className={styles.nextSessionKicker}>Next session</span>
+      {session && start ? (
+        <>
+          <a className={styles.nextSessionTitle} href={`#${slugify(session.label)}`}>
+            {session.label}
+          </a>
+          <p className={styles.nextSessionDate}>{formatDateTime(start)}</p>
+        </>
+      ) : (
+        <p className={styles.nextSessionDate}>
+          The date of the next session is announced on the mailing list.
+        </p>
+      )}
+      <div className={styles.nextSessionActions}>
+        <ExternalLink href={JITSI_URL} className="button button--primary">
+          Join the call
+        </ExternalLink>
+        <ExternalLink href={MAILING_LIST_URL} className="button button--secondary button--outline">
+          Get invitations by email
+        </ExternalLink>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Explains, step by step, how to take part in a session.
+ *
+ * @return the list of steps
+ */
+function JoinSteps() {
+  return (
+    <ol className={styles.joinSteps}>
+      <li>
+        <strong>Get the invitations.</strong> Each session is announced on the{" "}
+        <ExternalLink href={MAILING_LIST_URL}>nanopub-users mailing list</ExternalLink>.
+        To subscribe, open the group and click <em>Ask to join group</em>.
+      </li>
+      <li>
+        <strong>Join the call.</strong> At the session time, open the{" "}
+        <ExternalLink href={JITSI_URL}>Jitsi channel</ExternalLink>. It runs in
+        the browser, so there is nothing to install and no account to create.
+      </li>
+      <li>
+        <strong>Present your work, if you like.</strong> Have a use case, an idea,
+        or a problem you can’t solve? <a href={SPEAKER_CONTACT}>Send an email</a>{" "}
+        to get a slot in an upcoming session.
+      </li>
+    </ol>
+  );
+}
+
 const ITEM_TEMPLATE = {
   __html: `
 <template>
-  <h3 data-bind="label"></h3>
-  <p><em data-bind="startDate" data-format="datetime"></em></p>
-  <div data-bind-html="description"></div>
+  <div data-bind-data-start="startDate">
+    <h3 data-bind="label"></h3>
+    <p><em data-bind="startDate" data-format="datetime"></em></p>
+    <div data-bind-html="description"></div>
+  </div>
 </template>
 `,
 };
@@ -200,6 +423,8 @@ export default function SessionsPage() {
   // np URIs whose <nanopub-item> has rendered its own content. Until an item is
   // in here it shows the cached title as a placeholder instead of nothing.
   const [rendered, setRendered] = useState<ReadonlySet<string>>(EMPTY_SET);
+  const [startDates, setStartDates] = useState<StartDates>(EMPTY_START_DATES);
+  const [now] = useState(() => Date.now());
   const sectionRef = useRef<HTMLElement>(null);
   const dynamicRef = useRef<HTMLDivElement>(null);
   const staticRef = useRef<HTMLDivElement>(null);
@@ -345,6 +570,13 @@ export default function SessionsPage() {
       // re-render this observer would otherwise trigger on every mutation.
       setRendered((prev) => (sameSet(prev, done) ? prev : done));
 
+      const starts: Record<string, string> = {};
+      for (const el of items) {
+        const start = el.querySelector<HTMLElement>("[data-start]")?.dataset.start;
+        if (start) starts[uriOf(el)] = start;
+      }
+      setStartDates((prev) => (sameStartDates(prev, starts) ? prev : starts));
+
       // Only once every item is done do the markdown sessions join the list.
       if (
         !staticShownRef.current &&
@@ -391,109 +623,86 @@ export default function SessionsPage() {
     return () => observer.disconnect();
   }, [sessions]);
 
+  const nextSession = findNextSession(sessions, startDates, now);
+
   return (
-    <Layout title="Nano Sessions" description="All nanopublication sessions">
+    <Layout
+      title="Nano Sessions"
+      description="Regular online meetings, open to everyone, about nanopublications"
+    >
       <div className={`container margin-vert--lg ${styles.sessionsLayout}`}>
+        <aside className={styles.sessionsSidebar}>
+          <SessionsSidebar />
+        </aside>
         <main className={styles.sessionsMain}>
-          <h1>Nano Sessions</h1>
-          <p>
-            The Nano Sessions are regular online meetings for everyone
-            interested in nanopublications. A session usually has two
-            10-minute talks, followed by discussion and news from the
-            community. The{" "}
-            <a
-              href="https://docs.google.com/document/d/1-0aImR4bFHmay8j6bSFgIDi9sw01KXdmYw9szyhAWmY/edit#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              description
-            </a>{" "}
+          <h1 id="overview">Nano Sessions</h1>
+          <p className={styles.sessionsLead}>
+            The Nano Sessions are regular online meetings for everyone interested
+            in nanopublications. Come to hear what others are building, show your
+            own work, or ask questions. Hosted by{" "}
+            <ExternalLink href="https://knowledgepixels.com/">Knowledge Pixels</ExternalLink>
+            ; others are welcome to become hosts too.
+          </p>
+
+          <SessionFacts />
+
+          <NextSessionCard
+            session={nextSession}
+            start={nextSession && startDates[nextSession.np]}
+          />
+
+          <h2 id="how-to-join">How to join</h2>
+          <JoinSteps />
+          <p className={styles.sessionsNote}>
+            We take <ExternalLink href={NOTES_URL}>notes</ExternalLink> during the
+            sessions and keep them for the record. The{" "}
+            <ExternalLink href={DESCRIPTION_URL}>series description</ExternalLink>{" "}
             has more details.
           </p>
-          <p>
-            Want to present a use case, an idea, or a problem you can’t
-            solve?{" "}
-            <a href="mailto:virginia@knowledgepixels.com">Send an email</a> to
-            get a slot in an upcoming session. The sessions are hosted by{" "}
-            <a
-              href="https://knowledgepixels.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Knowledge Pixels
-            </a>
-            , and others are welcome to become hosts too.
-          </p>
-          <h2>How to join</h2>
-          <ul>
-            <li>
-              All sessions take place in this{" "}
-              <a
-                href="https://meet.jit.si/nanosession"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Jitsi channel
-              </a>
-              . Anyone can join, without registration.
-            </li>
-            <li>
-              Invitations are sent to the{" "}
-              <a
-                href="https://groups.google.com/g/nanopub-users/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                nanopub-users mailing list
-              </a>
-              . To subscribe, click <em>Ask to join group</em>.
-            </li>
-            <li>
-              We take{" "}
-              <a
-                href="https://docs.google.com/document/d/1_vL-hxsHGcy85g7EIUdLesztXFofQ9QW4VdZG3K5J8g/edit#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                notes
-              </a>{" "}
-              during the sessions and keep them for the record.
-            </li>
-          </ul>
-          <h2>Sessions</h2>
+
+          <h2 id="sessions">Upcoming and past sessions</h2>
           <section ref={sectionRef} className={styles.sessionList}>
             <div ref={dynamicRef}>
-              {sessions.map((s) => (
-                <div key={s.np}>
-                  {/* Stands in until the element has fetched its own content,
-                      so a cached list stays on screen while it revalidates
-                      instead of blanking out. The element renders its real
-                      heading inside itself, and this one then unmounts. */}
-                  {!rendered.has(s.np) && <h3>{s.label}</h3>}
-                  <nanopub-item
-                    uri={s.np}
-                    data-resource={s.resource}
-                    dangerouslySetInnerHTML={ITEM_TEMPLATE}
-                  />
-                  {s.subEvents.length > 0 && (
-                    <details style={{ marginBottom: "1rem" }}>
-                      <summary style={{ cursor: "pointer" }}>
-                        Sub-events ({s.subEvents.length})
-                      </summary>
-                      <div style={{ marginTop: "0.5rem" }}>
-                        {s.subEvents.map((sub) => (
-                          <nanopub-item
-                            key={sub.np}
-                            uri={sub.np}
-                            data-resource={sub.resource}
-                            dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
-                          />
-                        ))}
-                      </div>
-                    </details>
-                  )}
-                </div>
-              ))}
+              {sessions.map((s) => {
+                const upcoming = isUpcoming(startDates[s.np], now);
+                return (
+                  <div
+                    key={s.np}
+                    className={`${styles.sessionEntry} ${upcoming ? styles.sessionEntryUpcoming : ""}`}
+                  >
+                    {upcoming && (
+                      <span className={styles.sessionBadge}>
+                        {s.np === nextSession?.np ? "Next" : "Upcoming"}
+                      </span>
+                    )}
+                    {/* Stands in until the element has fetched its own content,
+                        so a cached list stays on screen while it revalidates
+                        instead of blanking out. The element renders its real
+                        heading inside itself, and this one then unmounts. */}
+                    {!rendered.has(s.np) && <h3>{s.label}</h3>}
+                    <nanopub-item
+                      uri={s.np}
+                      data-resource={s.resource}
+                      dangerouslySetInnerHTML={ITEM_TEMPLATE}
+                    />
+                    {s.subEvents.length > 0 && (
+                      <details className={styles.subEvents}>
+                        <summary>Sub-events ({s.subEvents.length})</summary>
+                        <div>
+                          {s.subEvents.map((sub) => (
+                            <nanopub-item
+                              key={sub.np}
+                              uri={sub.np}
+                              data-resource={sub.resource}
+                              dangerouslySetInnerHTML={SUB_ITEM_TEMPLATE}
+                            />
+                          ))}
+                        </div>
+                      </details>
+                    )}
+                  </div>
+                );
+              })}
             </div>
             {/* Sessions up to #26 predate the nanopublished ones and live in
                 markdown. The query above only yields #27 upwards, so appending
@@ -502,6 +711,7 @@ export default function SessionsPage() {
                 so the effect above can trim it before it is ever on screen. */}
             <div
               ref={staticRef}
+              className={styles.staticSessions}
               style={{ display: staticShown ? undefined : "none" }}
             >
               <MDSessions />
