@@ -24,8 +24,8 @@ function Home() {
             <Link className="button button--secondary button--lg" to="/docs/">
               Get started
             </Link>
-            <Link className="button button--outline button--secondary button--lg" to="/docs/examples">
-              Examples
+            <Link className="button button--outline button--secondary button--lg" href="https://nanodash.knowledgepixels.com/">
+              Try Nanodash
             </Link>
           </div>
         </div>
