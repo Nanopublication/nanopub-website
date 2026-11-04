@@ -1,6 +1,7 @@
 ---
 id: eswc2025program
 title: Program of the Nanopublication Tutorial at ESWC 2025
+sidebar_label: Program
 ---
 
 This is the program with schedule and materials of the [Nanopublication Tutorial at ESWC 2025](/docs/tutorials/eswc2025).
