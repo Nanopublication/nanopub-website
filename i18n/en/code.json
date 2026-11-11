@@ -1,0 +1,10 @@
+{
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Temporary draft",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is a temporary draft.",
+    "description": "The unlisted content banner message"
+  }
+}

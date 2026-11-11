@@ -129,3 +129,12 @@ html[data-theme='dark'] .navbar__logo img {
 .start-path--cli { --start-path-color: #8d3b72; }
 .start-path--code { --start-path-color: #325981; }
 .start-path--agent { --start-path-color: var(--ifm-color-emphasis-600); }
+
+/* Figures of the visual tutorials. They are drawn on their own dark background, so they look the
+   same in light and dark mode. */
+.tutorial-figure {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  border-radius: 10px;
+}
