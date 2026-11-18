@@ -138,3 +138,30 @@ html[data-theme='dark'] .navbar__logo img {
   margin: 1.5rem 0 2rem;
   border-radius: 10px;
 }
+
+/* Handbook pages, generated from the Nanopublication Docs (scripts/fetch-nanopub-docs.mjs). */
+.nanopub-docs-lead {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.nanopub-docs-source {
+  margin-top: -0.5rem;
+  font-size: 0.8rem;
+}
+
+.nanopub-docs-source a {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.nanopub-docs-source a:hover {
+  color: var(--ifm-link-color);
+}
+
+.nanopub-docs-note {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}

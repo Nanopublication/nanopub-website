@@ -20,6 +20,10 @@ Editing a documentation file is as easy as going to the markdown file for the pa
 
 If you are making substential changes we recommend you to clone the repository, and work locally (cf. below *Deployment* section to)
 
+### 📚 Handbook pages
+
+The pages under *Handbook* (`docs/handbook/`) are not in this repository. They are a copy of the [Nanopublication Docs](https://w3id.org/spaces/nanopub/r/docs), which are published as nanopublications and edited in Nanodash. `yarn build` fetches them with `scripts/fetch-nanopub-docs.mjs`, and `yarn dev` does so if they are not there yet. Run `yarn fetch-docs` to update them locally.
+
 > We recommend using [Typora](https://typora.io/) to edit [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) files easily on your computer.
 
 ### 📂 Files locations

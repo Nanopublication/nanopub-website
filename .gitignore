@@ -9,6 +9,7 @@ build
 pnpm-lock.yaml
 
 # generated files
+docs/handbook/
 .docusaurus
 .cache-loader
 
